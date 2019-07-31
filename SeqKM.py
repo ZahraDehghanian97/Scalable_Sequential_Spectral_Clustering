@@ -19,8 +19,6 @@ def KMeans(images, k):
         i = i - 1
     i = 0
     centroids.append(rd.choices(population=images, weights=probabilities))
-    # print(str(centroids[0]))
-    # print(str(images.index(centroids)))
     counter = k - 1
     while counter > 0:
         i = 0
@@ -32,7 +30,7 @@ def KMeans(images, k):
             print(str(i)+"--"+str(probabilities[i]))
             i = i + 1
         print("------------")
-        centroids.append(rd.choices(population=images, weights=(probabilities / sum(probabilities)), k=1))
+        centroids.append(rd.choices(population=images, weights=(probabilities / sum(probabilities))))
         counter = counter - 1
     return centroids
 
