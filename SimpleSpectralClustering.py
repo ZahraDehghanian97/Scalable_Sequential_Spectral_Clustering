@@ -9,7 +9,7 @@ dot_size = 25
 from sklearn.neighbors import radius_neighbors_graph
 A = radius_neighbors_graph(X_mn, 0.4, mode='distance', metric='minkowski', p=2, metric_params=None, include_self=False)
 A = A.toarray()
-print(A)
+# print(A)
 
 from scipy.sparse import csgraph
 L = csgraph.laplacian(A, normed=False)
