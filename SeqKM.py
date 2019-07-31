@@ -1,10 +1,11 @@
 import numpy as np
 from keras.datasets import mnist
 import random as rd
+import matplotlib.pyplot as plt
 
 
 def euclidean_distance(img_a, img_b):
-    return np.sum((img_a - img_b) ** 2)
+    return np.sum((img_a - img_b) * (img_a - img_b))
 
 
 def KMeans(images, k):
@@ -17,8 +18,9 @@ def KMeans(images, k):
         probabilities.append(1 / len(images))
         i = i - 1
     i = 0
-    centroids.append(rd.choice(images))
-
+    centroids.append(rd.choices(population=images, weights=probabilities))
+    # print(str(centroids[0]))
+    # print(str(images.index(centroids)))
     counter = k - 1
     while counter > 0:
         i = 0
@@ -27,9 +29,9 @@ def KMeans(images, k):
                          for (centroid) in centroids]
             # find index of minimum distance
             probabilities[i] = min(distances)
+            print(str(i)+"--"+str(probabilities[i]))
             i = i + 1
-
-        # print(probabilities / sum(probabilities))
+        print("------------")
         centroids.append(rd.choices(population=images, weights=(probabilities / sum(probabilities)), k=1))
         counter = counter - 1
     return centroids
@@ -42,12 +44,20 @@ def predict(k, Images, SampleSize):
     f = 10
     # initialize v
     while f > 0:
-        v.append(0)
+        v.append(1)
         f = f - 1
     # choose samples to find centroid between those
     M = rd.choices(Images, k=SampleSize)
     centers = KMeans(M, k)
     f = 0
+    fig = plt.figure(figsize=(8, 8))
+    columns = 2
+    rows = 5
+    for i in range(1, columns * rows + 1):
+        img = centers[i - 1][0]
+        fig.add_subplot(rows, columns, i)
+        plt.imshow(img, cmap='gray')
+    plt.show()
     # find cluster of each image
     for image in Images:
         distances = [euclidean_distance(centroid, image)
@@ -62,12 +72,15 @@ def predict(k, Images, SampleSize):
         # cordinate centroid with new member
         for row in range(28):
             for col in range(28):
-                if j > 0:
-                    centers[j][0][row][col] = (1 - epsilon) * centers[j][0][row][col] + epsilon * image[row][col]
-                else:
-                    centers[j][row][col] = (1 - epsilon) * centers[j][row][col] + epsilon * image[row][col]
-
-    # print the number of member of each cluster
+                centers[j][0][row][col] = (1 - epsilon) * centers[j][0][row][col] + epsilon * image[row][col]
+    fig = plt.figure(figsize=(8, 8))
+    columns = 2
+    rows = 5
+    for i in range(1, columns * rows + 1):
+        img = centers[i - 1][0]
+        fig.add_subplot(rows, columns, i)
+        plt.imshow(img, cmap='gray')
+    plt.show()
     print(str(v))
     return PredictedLabels
 
@@ -77,13 +90,20 @@ i = 0
 total_correct = 0
 # to have faster run i slice the samples
 X_train = X_train[:700]
+y_train = y_train[:700]
 # 70 is 1/10 of 700 , it is the number of anchor point
+z = []
+for i in range(10):
+    z.append(0)
+for y in y_train:
+    z[y] = z[y] + 1
+print(z)
 pred = predict(10, X_train, 70)
 
 # validate process
-for i in range(len(X_train)):
-    if pred[i] == y_train[i]:
-        total_correct += 1
-    acc = (total_correct / (i + 1)) * 100
-    print('test image[' + str(i) + ']', '\tpred:', pred[i], '\torig:', y_train[i], '\tacc:', str(round(acc, 2)) + '%')
-    i += 1
+# for i in range(len(X_train)):
+#     if pred[i] == y_train[i]:
+#         total_correct += 1
+#     acc = (total_correct / (i + 1)) * 100
+#     print('test image[' + str(i) + ']', '\tpred:', pred[i], '\torig:', y_train[i], '\tacc:', str(round(acc, 2)) + '%')
+#     i += 1
