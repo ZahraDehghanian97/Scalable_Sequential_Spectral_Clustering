@@ -50,10 +50,12 @@ A = find_neighbors_graph(x_train, len(x_train))
 # print (len(A[69]))
 
 L = make_laplacian(A)
-# print(L)
+print ("Laplacian matrix -------------")
+print(L)
 
 eigval, eigvec = np.linalg.eig(L)
-# print(eigval)
+print ("EigenValue matrix -------------")
+print(eigval)
 
 y_spec = eigvec[:, 1].copy()
 y_spec[y_spec < 0] = 0
