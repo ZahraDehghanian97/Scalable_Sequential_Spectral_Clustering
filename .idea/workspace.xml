@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e943ce26-2c4b-4c25-8f66-ef9e2f1f80f5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SpectralClustering.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeqKM.py" beforeDir="false" afterPath="$PROJECT_DIR$/SeqKM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SimpleSpectralClustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/SimpleSpectralClustering.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpectralClustering.py" beforeDir="false" afterPath="$PROJECT_DIR$/SpectralClustering.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,13 +25,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="17" />
-          <entry key="py" value="3205" />
+          <entry key="py" value="3736" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="17" />
-          <entry key="Python" value="3205" />
+          <entry key="Python" value="3736" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -64,10 +63,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SeqKM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-823">
-              <caret line="32" column="99" selection-start-line="32" selection-start-column="99" selection-end-line="32" selection-end-column="99" />
+            <state relative-caret-position="77">
+              <caret line="6" selection-start-line="6" selection-end-line="9" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
+                <element signature="e#181#920#0" />
+                <element signature="e#1101#2518#0" />
               </folding>
             </state>
           </provider>
@@ -76,7 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SimpleSpectralClustering.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-132">
+            <state relative-caret-position="300">
+              <caret line="26" column="10" lean-forward="true" selection-start-line="20" selection-end-line="26" selection-end-column="10" />
               <folding>
                 <element signature="e#4#22#0" expanded="true" />
               </folding>
@@ -86,7 +88,14 @@
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SpectralClustering.py">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#18#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -113,6 +122,7 @@
         <option value="$PROJECT_DIR$/KNN.py" />
         <option value="$PROJECT_DIR$/KNN++.py" />
         <option value="$PROJECT_DIR$/SeqKM.py" />
+        <option value="$PROJECT_DIR$/SimpleSpectralClustering.py" />
         <option value="$PROJECT_DIR$/SpectralClustering.py" />
       </list>
     </option>
@@ -158,7 +168,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.SpectralClustering">
+  <component name="RunManager" selected="Python.SpectralClustering (1)">
     <configuration name="SeqKM" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="code" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -172,6 +182,48 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SeqKM.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SimpleSpectralClustering" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SimpleSpectralClustering.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="SpectralClustering (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="D:\university\payanName\code\SpectralClustering2cluster.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -226,9 +278,13 @@
       <item itemvalue="Python.matrices_builder" />
       <item itemvalue="Python.SeqKM" />
       <item itemvalue="Python.SpectralClustering" />
+      <item itemvalue="Python.SpectralClustering (1)" />
+      <item itemvalue="Python.SimpleSpectralClustering" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.SpectralClustering (1)" />
+        <item itemvalue="Python.SimpleSpectralClustering" />
         <item itemvalue="Python.SpectralClustering" />
         <item itemvalue="Python.SeqKM" />
         <item itemvalue="Python.matrices_builder" />
@@ -261,12 +317,12 @@
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2400636" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2400636" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30195382" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.30195382" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -310,17 +366,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SeqKM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-823">
-          <caret line="32" column="99" selection-start-line="32" selection-start-column="99" selection-end-line="32" selection-end-column="99" />
+        <state relative-caret-position="77">
+          <caret line="6" selection-start-line="6" selection-end-line="9" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#181#920#0" />
+            <element signature="e#1101#2518#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SimpleSpectralClustering.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-132">
+        <state relative-caret-position="300">
+          <caret line="26" column="10" lean-forward="true" selection-start-line="20" selection-end-line="26" selection-end-column="10" />
           <folding>
             <element signature="e#4#22#0" expanded="true" />
           </folding>
@@ -328,7 +387,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SpectralClustering.py">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
   </component>
 </project>
