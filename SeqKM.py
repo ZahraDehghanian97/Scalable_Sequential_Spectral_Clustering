@@ -4,6 +4,13 @@ import random as rd
 import matplotlib.pyplot as plt
 
 
+def build_distances_black(x_train):
+    v = []
+    for image in x_train:
+        v.append(np.sum(image * image))
+    return v
+
+
 def euclidean_distance(img_a, img_b):
     return np.sum((img_a - img_b) * (img_a - img_b))
 
@@ -27,7 +34,7 @@ def KMeans(images, k):
                          for (centroid) in centroids]
             # find index of minimum distance
             probabilities[i] = min(distances)
-            print(str(i)+"--"+str(probabilities[i]))
+            print(str(i) + "--" + str(probabilities[i]))
             i = i + 1
         print("------------")
         centroids.append(rd.choices(population=images, weights=(probabilities / sum(probabilities))))
@@ -87,8 +94,8 @@ def predict(k, Images, SampleSize):
 i = 0
 total_correct = 0
 # to have faster run i slice the samples
-X_train = X_train[:700]
-y_train = y_train[:700]
+X_train = X_train[:200]
+y_train = y_train[:200]
 # 70 is 1/10 of 700 , it is the number of anchor point
 z = []
 for i in range(10):
@@ -97,6 +104,10 @@ for y in y_train:
     z[y] = z[y] + 1
 print(z)
 pred = predict(10, X_train, 70)
+
+fig, ax = plt.subplots(figsize=(8, 5))
+ax.scatter(y_train, build_distances_black(X_train), c=pred, s=20)
+plt.show()
 
 # validate process
 # for i in range(len(X_train)):

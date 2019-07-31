@@ -61,9 +61,12 @@ eigvec = eigvec[:, 10:20]
 for row in eigvec:
     y_spec.append(np.where(row == (max(row))))
 c = []
+count = [0,0,0,0,0,0,0,0,0,0]
 for y in y_spec:
     c.append(y[0][0])
+    count[y[0][0]] = count[y[0][0]] +1
 
 fig, ax = plt.subplots(figsize=(6, 4))
 ax.scatter(y_train, build_distances_black(x_train), c=c, s=25)
 plt.show()
+print(count)
