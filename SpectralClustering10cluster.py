@@ -4,13 +4,11 @@ import random as rd
 import matplotlib.pyplot as plt
 
 
-
 def build_distances_black(x_train):
     v = []
-    for image in x_train :
-        v.append(np.sum(image*image))
+    for image in x_train:
+        v.append(np.sum(image * image))
     return v
-
 
 
 def euclidean_distance(img_a, img_b):
@@ -28,15 +26,14 @@ def find_neighbors_graph(x_train, size):
 
 
 def make_laplacian(A):
-    i= 0
-    for row in A :
+    i = 0
+    for row in A:
         z = 0
-        for cell in row :
+        for cell in row:
             z = z + cell
-        row[i] =(-1 * z)
-        i = i+1
+        row[i] = (-1 * z)
+        i = i + 1
     return A
-
 
 
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
@@ -50,17 +47,23 @@ A = find_neighbors_graph(x_train, len(x_train))
 # print (len(A[69]))
 
 L = make_laplacian(A)
-print ("Laplacian matrix -------------")
-print(L)
+# print ("Laplacian matrix -------------")
+# print(L)
 
 eigval, eigvec = np.linalg.eig(L)
-print ("EigenValue matrix -------------")
-print(eigval)
+# print ("EigenValue matrix -------------")
+# print(eigval)
 
-y_spec = eigvec[:, 1].copy()
-y_spec[y_spec < 0] = 0
-y_spec[y_spec > 0] = 1
+y_spec = []
+eigvec = eigvec[:, 10:20]
+# print(len(eigvec))
 
-fig, ax = plt.subplots(figsize=(6,4))
-ax.scatter(y_train,build_distances_black(x_train),c=y_spec ,s=25)
+for row in eigvec:
+    y_spec.append(np.where(row == (max(row))))
+c = []
+for y in y_spec:
+    c.append(y[0][0])
+
+fig, ax = plt.subplots(figsize=(6, 4))
+ax.scatter(y_train, build_distances_black(x_train), c=c, s=25)
 plt.show()
