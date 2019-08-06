@@ -94,8 +94,8 @@ def predict(k, Images, SampleSize):
 i = 0
 total_correct = 0
 # to have faster run i slice the samples
-X_train = X_train[:200]
-y_train = y_train[:200]
+X_train = X_train[:700]
+y_train = y_train[:700]
 # 70 is 1/10 of 700 , it is the number of anchor point
 z = []
 for i in range(10):
