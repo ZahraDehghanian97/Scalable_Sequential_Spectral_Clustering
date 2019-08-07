@@ -87,27 +87,27 @@ def seqkm(k, Images, SampleSize):
         plt.imshow(img, cmap='gray')
     plt.show()
     print(str(v))
-    return centers , PredictedLabels
+    return  PredictedLabels,centers, M
 
 
-(X_train, y_train), (X_test, y_test) = mnist.load_data()
-i = 0
-total_correct = 0
-# to have faster run i slice the samples
-X_train = X_train[:700]
-y_train = y_train[:700]
-# 70 is 1/10 of 700 , it is the number of anchor point
-z = []
-for i in range(10):
-    z.append(0)
-for y in y_train:
-    z[y] = z[y] + 1
-print(z)
-anchors , pred = seqkm(10, X_train, 70)
-
-fig, ax = plt.subplots(figsize=(8, 5))
-ax.scatter(y_train, build_distances_black(X_train), c=pred, s=20)
-plt.show()
+# (X_train, y_train), (X_test, y_test) = mnist.load_data()
+# i = 0
+# total_correct = 0
+# # to have faster run i slice the samples
+# X_train = X_train[:700]
+# y_train = y_train[:700]
+# # 70 is 1/10 of 700 , it is the number of anchor point
+# z = []
+# for i in range(10):
+#     z.append(0)
+# for y in y_train:
+#     z[y] = z[y] + 1
+# print(z)
+# label_all, centers,anchors = seqkm(10, X_train, 70)
+#
+# fig, ax = plt.subplots(figsize=(8, 5))
+# ax.scatter(y_train, build_distances_black(X_train), c=label_all, s=20)
+# plt.show()
 
 # validate process
 # for i in range(len(X_train)):
