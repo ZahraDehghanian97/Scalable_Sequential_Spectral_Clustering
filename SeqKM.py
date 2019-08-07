@@ -42,7 +42,7 @@ def KMeans(images, k):
     return centroids
 
 
-def predict(k, Images, SampleSize):
+def seqkm(k, Images, SampleSize):
     # v count the number of image in each cluster
     v = []
     PredictedLabels = []
@@ -87,7 +87,7 @@ def predict(k, Images, SampleSize):
         plt.imshow(img, cmap='gray')
     plt.show()
     print(str(v))
-    return PredictedLabels
+    return centers , PredictedLabels
 
 
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
@@ -103,7 +103,7 @@ for i in range(10):
 for y in y_train:
     z[y] = z[y] + 1
 print(z)
-pred = predict(10, X_train, 70)
+anchors , pred = seqkm(10, X_train, 70)
 
 fig, ax = plt.subplots(figsize=(8, 5))
 ax.scatter(y_train, build_distances_black(X_train), c=pred, s=20)
