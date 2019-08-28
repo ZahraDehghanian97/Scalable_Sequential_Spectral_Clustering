@@ -1,3 +1,5 @@
+import math
+
 import SSVD
 import numpy as np
 import scipy
@@ -7,7 +9,7 @@ import matplotlib.pyplot as plt
 
 
 def kernel(xi, uj):
-    return np.sum((xi - uj) * (xi - uj))
+    return math.exp(-1*np.sum((xi - uj) * (xi - uj)))
 
 
 def sum_kernel(xi, anchors, ux):
@@ -66,6 +68,12 @@ def build_G(A, B, k):
     return ans
 
 
+def build_A(A, sigma, k):
+    s = np.diag(sigma)
+    print(s)
+    pass
+
+
 def seqsc(x, k, m):
     v, label_all, anchors = SeqKM.seqkm(m, x, 3 * m)
     d = [0] * m
@@ -84,8 +92,8 @@ def seqsc(x, k, m):
         z_bar[s] = np.matmul(z[s], d)
     #       z_bar is n*1
     A, B, sigma = SSVD.ssvd(z_bar, k)
-    G = build_G(A, B, k)
-    v, label_all, centers = SeqKM.seqkm(k, G, m)
+    A_my = build_A(A, sigma, k)
+    v, label_all, centers = SeqKM.seqkm(k, A_my, m)
     return label_all, centers, anchors
 
 
@@ -93,8 +101,8 @@ def seqsc(x, k, m):
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
 i = 0
 # to have faster run i slice the samples
-X_train = X_train[:200]
-y_train = y_train[:200]
+X_train = X_train[:100]
+y_train = y_train[:100]
 # 70 is 1/10 of 700 , it is the number of anchor point
 z = []
 for i in range(10):
