@@ -29,10 +29,10 @@ def ssvd(z, k):
     # A = []
     # for q in z:
     #     A.append(np.matmul(q, R))
-    print("---------------------B is compute : " + str(B))
-    print("---------------------sigma is compute : " + str(sigma))
-    print("---------------------A is compute : " + str(A))
-    print("done")
+    # print("---------------------B is compute : " + str(B))
+    # print("---------------------sigma is compute : " + str(sigma))
+    # print("---------------------A is compute : " + str(A))
+    # print("done")
     return A, B, sigma
 
 # z = [[1,2,3],[2,3,4],[4,5,6],[5,6,7]]

@@ -189,27 +189,27 @@
 #         showImage(centers, 5, int(k / 5))
 #     return v, PredictedLabels, centers
 #
-# #
-# # (X_train, y_train), (X_test, y_test) = mnist.load_data()
-# # i = 0
-# # total_correct = 0
-# # X_train = X_train[:200]
-# # y_train = y_train[:200]
-# # z = []
-# # for i in range(10):
-# #     z.append(0)
-# # for y in y_train:
-# #     z[y] = z[y] + 1
-# # # print(z)
-# # v, label_all, centers= seqkm(10, x_train,70)
+#
+# (X_train, y_train), (X_test, y_test) = mnist.load_data()
+# i = 0
+# total_correct = 0
+# X_train = X_train[:200]
+# y_train = y_train[:200]
+# z = []
+# for i in range(10):
+#     z.append(0)
+# for y in y_train:
+#     z[y] = z[y] + 1
 # # print(z)
-# # for i in range(0, 10):
-# #     z[i] = (v[i] - z[i])
-# # print(v)
-# # print(z)
-# # fig, ax = plt.subplots(figsize=(8, 5))
-# # ax.scatter(y_train, build_distances_black(X_train), c=label_all, s=20)
-# # plt.show()
+# v, label_all, centers= seqkm(10, X_train,70)
+# print(z)
+# for i in range(0, 10):
+#     z[i] = (v[i] - z[i])
+# print(v)
+# print(z)
+# fig, ax = plt.subplots(figsize=(8, 5))
+# ax.scatter(y_train, build_distances_black(X_train), c=label_all, s=20)
+# plt.show()
 #
 # # x_train = [[1,2],[2,3],[3,4],[4,5],[5,6],[6,7]]
 # # v, label_all, centers= seqkm(2, x_train,4)

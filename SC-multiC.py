@@ -56,7 +56,7 @@ def transform(X_train):
         for row in img :
             temp.extend(row)
         ans.append(temp)
-        print(temp)
+        # print(temp)
     return ans
 
 
@@ -122,43 +122,33 @@ from sklearn import (manifold, datasets, decomposition)
 import numpy as np
 import time
 from sklearn import cluster
-from sklearn.neighbors import kneighbors_graph
-from sklearn.utils import shuffle
-from matplotlib import offsetbox
 
 
-# Spectral embedding projection
-print("Computing Spectral embedding")
-start = int(round(time.time() * 1000))
+
+
+# start = int(round(time.time() * 1000))
 X_spec = manifold.SpectralEmbedding(n_components=2, affinity='nearest_neighbors', gamma=None, random_state=None,
                                     eigen_solver=None, n_neighbors=5).fit_transform(z)
-end = int(round(time.time() * 1000))
-print("--Spectral Embedding finished in ", (end - start), "ms--------------")
-print("Done.")
 
-
-# spectral clustering, fitting and predictions
+print(len(X_spec))
+print((X_spec))
+# end = int(round(time.time() * 1000))
+# # print("--Spectral Embedding finished in ", (end - start), "ms--------------")
+# # print("Done.")
 spectral = cluster.SpectralClustering(n_clusters=10, eigen_solver='arpack', affinity="nearest_neighbors")
-
-# X = spectral.fit(X_iso)
 X = spectral.fit(X_spec)
-
-# y_pred = spectral.fit_predict(X_iso)
 y_pred = spectral.fit_predict(X_spec)
 fig, ax = plt.subplots(figsize=(8, 5))
-print(len(y_train))
-print(len(x_train))
-print(len(y_pred))
 ax.scatter(y_train, build_distances_black(x_train), c=y_pred, s=20)
 plt.show()
 
 # clustering evaluation metrics
-print(confusion_matrix(y_train, y_pred))
-print(completeness_score(y_train, y_pred))
+# print(confusion_matrix(y_train, y_pred))
+# print(completeness_score(y_train, y_pred))
 
-with plt.style.context('fivethirtyeight'):
-    plt.title("Spectral embedding & spectral clustering on MNIST")
-    plt.scatter(X_spec[:, 0], X_spec[:, 1], c=y_pred, s=50, cmap=plt.cm.get_cmap("jet", 10))
-    plt.colorbar(ticks=range(10))
-    plt.clim(-0.5, 9.5)
-plt.show()
+# with plt.style.context('fivethirtyeight'):
+#     plt.title("Spectral embedding & spectral clustering on MNIST")
+#     plt.scatter(X_spec[:, 0], X_spec[:, 1], c=y_pred, s=50, cmap=plt.cm.get_cmap("jet", 10))
+#     plt.colorbar(ticks=range(10))
+#     plt.clim(-0.5, 9.5)
+# plt.show()
