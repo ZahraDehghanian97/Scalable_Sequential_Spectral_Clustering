@@ -4,6 +4,7 @@ import SSVD
 import numpy as np
 import scipy
 import SeqKM
+import random as rd
 from keras.datasets import mnist
 import matplotlib.pyplot as plt
 
@@ -74,6 +75,11 @@ def transform(X_train):
         ans.append(temp)
     return ans
 
+def build_distances_black(x_train):
+    v = []
+    for image in x_train:
+        v.append(np.sum(image * image))
+    return v
 
 def retransform(X_train):
     ans = []
@@ -101,13 +107,17 @@ def showImage(images, rows, columns):
 
 
 def seqsc(x, k, m):
+
+    # M = rd.choices(x, k=m*3)
+    # my_x = transform(M)
+    # kmeans = KMeans(n_clusters=m,init='k-means++')
+    # kmeans.fit(my_x)
+    # anchors = kmeans.cluster_centers_
     my_x = transform(x)
-    kmeans = KMeans(n_clusters=m,init='k-means++')
-    kmeans.fit(my_x)
-    anchors = kmeans.cluster_centers_
-    # v, label_all, anchors = SeqKM.seqkm(m, my_x, 3 * m)
+    v, label_all, anchors = SeqKM.seqkm(m, my_x, 3 * m)
     pic_anchors = retransform(anchors)
     showImage(pic_anchors, 5, int(m / 5))
+    my_x = transform(x)
     p = 5
     d = [0] * m
     lenx = len(x)

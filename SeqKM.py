@@ -1,12 +1,14 @@
 import random as rd
+from sklearn.cluster import KMeans
+import math
 
 
 def euclidean_distance(img_a, img_b):
     count = 0
-    img_a = img_a[0]
     for i in range(0, len(img_a)):
         temp = img_a[i] - img_b[i]
         count = (temp ** 2) + count
+    count = math.sqrt(count)
     return count
 
 
@@ -40,7 +42,6 @@ def KMeansPlusPlus(images, k):
 
 
 def seqkm(k, Images, SampleSize):
-
     v = []
     PredictedLabels = []
     f = k
@@ -48,8 +49,10 @@ def seqkm(k, Images, SampleSize):
         v.append(1)
         f = f - 1
     M = rd.choices(Images, k=SampleSize)
-    print("choose " + str(k) + " centroid with kmeans")
-    centers = KMeansPlusPlus(M, k)
+    print("choose " + str(k) + " centroid with kmeans++")
+    kmeans = KMeans(n_clusters=k, init='k-means++')
+    kmeans.fit(M)
+    centers = kmeans.cluster_centers_
     f = 0
     i = 0
     for image in Images:

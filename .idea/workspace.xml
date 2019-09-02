@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e943ce26-2c4b-4c25-8f66-ef9e2f1f80f5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/SC-multiC.py" beforeDir="false" afterPath="$PROJECT_DIR$/SC-multiC.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SeqKM.py" beforeDir="false" afterPath="$PROJECT_DIR$/SeqKM.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SeqSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/SeqSC.py" afterDir="false" />
     </list>
@@ -29,13 +28,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="72" />
-          <entry key="py" value="14773" />
+          <entry key="py" value="14867" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="72" />
-          <entry key="Python" value="14773" />
+          <entry key="Python" value="14867" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -82,34 +81,37 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SC-multiC.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="129" selection-start-line="129" selection-end-line="134" />
+            <state relative-caret-position="105">
+              <caret line="8" selection-start-line="8" selection-end-line="13" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SeqSC.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="104" column="39" selection-start-line="104" selection-start-column="39" selection-end-line="104" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-                <element signature="e#3632#5523#0" />
-                <marker date="1567411252450" expanded="true" signature="649:1262" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/SeqSC.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="113" column="22" lean-forward="true" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <marker date="1567414238055" expanded="true" signature="669:1282" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SeqKM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
-              <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
+            <state relative-caret-position="216">
+              <caret line="68" column="12" lean-forward="true" selection-start-line="67" selection-start-column="10" selection-end-line="68" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+                <element signature="e#255#1127#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,6 +143,7 @@
       <find>dis</find>
       <find>print</find>
       <find>eucl</find>
+      <find>bui</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -440,16 +443,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SC-multiC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="129" selection-start-line="129" selection-end-line="134" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/random.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
@@ -481,22 +474,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SeqSC.py">
+    <entry file="file://$PROJECT_DIR$/SC-multiC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="104" column="39" selection-start-line="104" selection-start-column="39" selection-end-line="104" selection-end-column="39" />
+        <state relative-caret-position="105">
+          <caret line="8" selection-start-line="8" selection-end-line="13" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#3632#5523#0" />
-            <marker date="1567411252450" expanded="true" signature="649:1262" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SeqKM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="66" column="8" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
+        <state relative-caret-position="216">
+          <caret line="68" column="12" lean-forward="true" selection-start-line="67" selection-start-column="10" selection-end-line="68" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#255#1127#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SeqSC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="113" column="22" lean-forward="true" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1567414238055" expanded="true" signature="669:1282" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
