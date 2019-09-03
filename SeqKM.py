@@ -1,6 +1,6 @@
 import random as rd
-from sklearn.cluster import KMeans
 import math
+import Kmeans
 
 
 def euclidean_distance(img_a, img_b):
@@ -12,47 +12,20 @@ def euclidean_distance(img_a, img_b):
     return count
 
 
-def KMeansPlusPlus(images, k):
-    centroids = []
-    probabilities = []
-    i = len(images)
-    while i > 0:
-        probabilities.append(1 / len(images))
-        i = i - 1
-    i = 0
-    print("choose 0's centroid")
-    centroids.append(rd.choices(population=images, weights=probabilities)[0])
-    counter = k - 1
-    while counter > 0:
-        print("choose " + str(k - counter) + "'s centroid")
-        i = 0
-        for image in images:
-            distances = [euclidean_distance(u, image) for (u) in centroids]
-            probabilities[i] = min(distances)
-            # print("------------------------------")
-            i = i + 1
-        sumP = sum(probabilities)
-        i = 0
-        for p in probabilities:
-            probabilities[i] = p / sumP
-            i = i + 1
-        centroids.append(rd.choices(population=images, weights=probabilities)[0])
-        counter = counter - 1
-    return centroids
-
-
 def seqkm(k, Images, SampleSize):
+    print("SeqKM start")
     v = []
     PredictedLabels = []
     f = k
     while f > 0:
         v.append(1)
         f = f - 1
-    M = rd.choices(Images, k=SampleSize)
-    print("choose " + str(k) + " centroid with kmeans++")
-    kmeans = KMeans(n_clusters=k, init='k-means++')
-    kmeans.fit(M)
-    centers = kmeans.cluster_centers_
+    if SampleSize<len(Images) :
+        M = rd.choices(Images, k=SampleSize)
+    else :
+        M = Images
+    # print("choose " + str(k) + " centroid with kmeans++")
+    centers = Kmeans.KMeansPlusplus(M, k)
     f = 0
     i = 0
     for image in Images:
@@ -64,7 +37,34 @@ def seqkm(k, Images, SampleSize):
         v[j] = v[j] + 1
         epsilon = 1 / v[j]
         f = f + 1
-        print("update centroid number " + str(j))
-        for i in range(0, len(image)):
-            centers[j][i] = ((1 - epsilon) * centers[j][i] + 0.5) + (epsilon * image[i] + 0.5)
+        # if SampleSize< len(Images) :
+        #     print("update centroid number " + str(j))
+        #     for i in range(0, len(image)):
+        #         centers[j][i] = ((1 - epsilon) * centers[j][i] + 0.5) + (epsilon * image[i] + 0.5)
+    print("SeqKM done")
     return v, PredictedLabels, centers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+from sklearn.cluster import KMeans
+def seqKM(k , A):
+    kmeans = KMeans(n_clusters=k,init='k-means++')
+    kmeans.fit(A)
+    # indexs = []
+    # print(A)
+    # for c in kmeans.cluster_centers_ :
+    #     print(c)
+    #     indexs.append( A.index(c))
+    return kmeans.labels_,kmeans.labels_
