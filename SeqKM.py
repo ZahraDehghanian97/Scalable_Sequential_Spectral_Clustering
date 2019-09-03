@@ -59,12 +59,23 @@ def seqkm(k, Images, SampleSize):
 
 
 from sklearn.cluster import KMeans
+
+
+def compute_summary(A):
+    ans = []
+    for a in A :
+        temp = 0
+        for i in a :
+            temp = temp + i**2
+        ans.append(temp)
+    return ans
 def seqKM(k , A):
     kmeans = KMeans(n_clusters=k,init='k-means++')
     kmeans.fit(A)
-    # indexs = []
-    # print(A)
-    # for c in kmeans.cluster_centers_ :
-    #     print(c)
-    #     indexs.append( A.index(c))
-    return kmeans.labels_,kmeans.labels_
+    S_A = compute_summary(A)
+    indexs = []
+    for c in kmeans.cluster_centers_ :
+        S_C = 0
+        for i in c : S_C = S_C + i**2
+        indexs.append( S_A.index(S_C))
+    return kmeans.labels_,indexs

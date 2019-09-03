@@ -138,7 +138,6 @@ def seqsc(x, k, m):
         z_bar[s] = np.matmul(z[s], d)
     A, sigma, B = SSVD.ssvd(z_bar)
     A_my = build_A(A, k)
-    # m_A = len(A_my)
     label_all, centers = SeqKM.seqKM(k, A_my )
     print("SeqSC done")
     return label_all, centers, anchors
