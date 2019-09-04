@@ -53,7 +53,7 @@ def KMeansPlusplus(M, k):
     return kmeans.cluster_centers_, kmeans.labels_
 
 
-def mykmeans(M, k):
+def kmeans(M, k):
     kmeans = KMeans(n_clusters=k, init='random')
     kmeans.fit(M)
     print("Kmeans done")
@@ -69,7 +69,7 @@ def transform(X_train):
     return ans
 
 
-def kmeansplusplus():
+def guikmeansplusplus():
     (X_train, y_train), (X_test, y_test) = mnist.load_data()
     i = 0
     X_train = X_train[:700]
@@ -79,12 +79,12 @@ def kmeansplusplus():
     centers, label_all = KMeansPlusplus(my_x, k)
     # show_final_result(X_train, y_train, label_all,k)
 
-def kmeans():
+def guikmeans():
     (X_train, y_train), (X_test, y_test) = mnist.load_data()
     i = 0
     X_train = X_train[:700]
     y_train = y_train[:700]
     k = 10
     my_x = transform(X_train)
-    centers, label_all = mykmeans(my_x, k)
+    centers, label_all = kmeans(my_x, k)
     # show_final_result(X_train, y_train, label_all,k)

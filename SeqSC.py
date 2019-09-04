@@ -293,19 +293,19 @@ def make_0_255(X_train):
                     X_train[k][i][j] = 255
     return X_train
 
-def seqsc():
+def guiseqsc(k,n,m,f):
     (X_train, y_train), (X_test, y_test) = mnist.load_data()
-    i = 0
-    X_train = X_train[:700]
-    y_train = y_train[:700]
-    k = 10
-    m =int( len(X_train))
+    X_train = X_train[0:n]
+    y_train = y_train[0:n]
+    # k = 10
+    # m =int( len(X_train)/5)
     z = []
     for i in range(10):
         z.append(0)
     for y in y_train:
         z[y] = z[y] + 1
     # print(z)
-    X_train = make_0_255(X_train)
+    if(f >0) :
+        X_train = make_0_255(X_train)
     label_all, centers, anchors = seqsc(X_train, k, m)
     show_final_result(X_train, y_train, label_all,k)

@@ -174,7 +174,7 @@ def showImage(images, rows, columns):
     return
 
 
-def sc():
+def guisc():
     (X_train, y_train), (X_test, y_test) = mnist.load_data()
     x_train = X_train[:700]
     y_train = y_train[:700]
