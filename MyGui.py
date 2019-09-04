@@ -1,40 +1,34 @@
-from tkinter import *
-from tkinter import ttk
+import tkinter as tk
+root = tk.Tk()
 
-def calculate(*args):
-    try:
-        value = float(feet.get())
-        meters.set((0.3048 * value * 10000.0 + 0.5)/10000.0)
-    except ValueError:
-        pass
+v = tk.IntVar()
+v.set(1)  # initializing the choice, i.e. Python
 
-root = Tk()
-root.title("clustering")
+languages = [
+    ("Python",1),
+    ("Perl",2),
+    ("Java",3),
+    ("C++",4),
+    ("C",5)
+]
 
-mainframe = ttk.Frame(root, padding="3 3 12 12")
-mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
-root.columnconfigure(0, weight=1)
-root.rowconfigure(0, weight=1)
+def ShowChoice():
+    print(v.get())
 
-feet = StringVar()
-meters = StringVar()
+tk.Label(root,
+         text="""Choose your favourite 
+programming language:""",
+         justify = tk.LEFT,
+         padx = 20).pack()
 
-# feet_entry = ttk.Entry(mainframe, width=7, textvariable=feet)
-# feet_entry.grid(column=2, row=1, sticky=(W, E))
-ttk.Label(mainframe, text="choose clustering type first ...").grid(column=1, row=1, sticky=W)
-
-ttk.Radiobutton(root, text="Kmeans", value=1).grid(column=1, row=2, sticky=(W))
-ttk.Radiobutton(root, text="Spectral Clustering",value=2).grid(column=2, row=2, sticky=(W))
-ttk.Radiobutton(root, text="SeqSC",  value=3).grid(column=3, row=2, sticky=(W))
-# ttk.Label(mainframe, textvariable=meters).grid(column=2, row=2, sticky=(W, E))
-ttk.Button(mainframe, text="Cluster", command=calculate).grid(column=3, row=3, sticky=W)
-
-# ttk.Label(mainframe, text="feet").grid(column=3, row=1, sticky=W)
-# ttk.Label(mainframe, text="is equivalent to").grid(column=1, row=2, sticky=E)
-
-# for child in mainframe.winfo_children(): child.grid_configure(padx=5, pady=5)
-#
-# feet_entry.focus()
-# root.bind('<Return>', calculate)
+for val, language in enumerate(languages):
+    tk.Radiobutton(root,
+                   text=language,
+                   indicatoron=0,
+                   width=20,
+                   padx=20,
+                   variable=v,
+                   command=ShowChoice,
+                   value=val).pack(anchor=tk.W)
 
 root.mainloop()
