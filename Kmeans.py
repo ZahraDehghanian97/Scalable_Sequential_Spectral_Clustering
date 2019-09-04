@@ -1,6 +1,7 @@
 import random as rd
 import math
-
+from keras.datasets import mnist
+from sklearn.cluster import KMeans
 
 def euclidean_distance(img_a, img_b):
     count = 0
@@ -41,18 +42,49 @@ def KMeansPlusPlus(images, k):
     return centroids
 
 
-
-
-
-
-
-
-
-
 # main kmeans for test and compare
-from sklearn.cluster import KMeans
+
+
+
 def KMeansPlusplus(M, k):
     kmeans = KMeans(n_clusters=k, init='k-means++')
     kmeans.fit(M)
     print("Kmeans++ done")
-    return kmeans.cluster_centers_
+    return kmeans.cluster_centers_, kmeans.labels_
+
+
+def mykmeans(M, k):
+    kmeans = KMeans(n_clusters=k, init='random')
+    kmeans.fit(M)
+    print("Kmeans done")
+    return kmeans.cluster_centers_, kmeans.labels_
+
+def transform(X_train):
+    ans = []
+    for img in X_train:
+        temp = []
+        for row in img:
+            temp.extend(row)
+        ans.append(temp)
+    return ans
+
+
+def kmeansplusplus():
+    (X_train, y_train), (X_test, y_test) = mnist.load_data()
+    i = 0
+    X_train = X_train[:700]
+    y_train = y_train[:700]
+    k = 10
+    my_x = transform(X_train)
+    centers, label_all = KMeansPlusplus(my_x, k)
+    # show_final_result(X_train, y_train, label_all,k)
+
+def kmeans():
+    (X_train, y_train), (X_test, y_test) = mnist.load_data()
+    i = 0
+    X_train = X_train[:700]
+    y_train = y_train[:700]
+    k = 10
+    my_x = transform(X_train)
+    centers, label_all = mykmeans(my_x, k)
+    # show_final_result(X_train, y_train, label_all,k)

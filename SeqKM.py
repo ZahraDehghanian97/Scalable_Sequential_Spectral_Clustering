@@ -25,7 +25,7 @@ def seqkm(k, Images, SampleSize):
     else :
         M = Images
     # print("choose " + str(k) + " centroid with kmeans++")
-    centers = Kmeans.KMeansPlusplus(M, k)
+    centers,label = Kmeans.KMeansPlusplus(M, k)
     f = 0
     i = 0
     # for image in Images:

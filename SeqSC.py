@@ -1,5 +1,4 @@
 import math
-from sklearn.cluster import KMeans
 import SSVD
 import numpy as np
 import scipy
@@ -112,7 +111,7 @@ def seqsc(x, k, m):
     print("SeqSC start")
     my_x = transform(x)
     v, label_all, anchors = SeqKM.seqkm(m, my_x, 3 * m)
-    pic_anchors = retransform(anchors)
+    # pic_anchors = retransform(anchors)
     # showImage(pic_anchors, 5, int(m / 5))
     # my_x = transform(x)
     p = 5
@@ -294,19 +293,19 @@ def make_0_255(X_train):
                     X_train[k][i][j] = 255
     return X_train
 
-
-(X_train, y_train), (X_test, y_test) = mnist.load_data()
-i = 0
-X_train = X_train[:700]
-y_train = y_train[:700]
-k = 10
-m =int( len(X_train))
-z = []
-for i in range(10):
-    z.append(0)
-for y in y_train:
-    z[y] = z[y] + 1
-# print(z)
-X_train = make_0_255(X_train)
-label_all, centers, anchors = seqsc(X_train, k, m)
-show_final_result(X_train, y_train, label_all,k)
+def seqsc():
+    (X_train, y_train), (X_test, y_test) = mnist.load_data()
+    i = 0
+    X_train = X_train[:700]
+    y_train = y_train[:700]
+    k = 10
+    m =int( len(X_train))
+    z = []
+    for i in range(10):
+        z.append(0)
+    for y in y_train:
+        z[y] = z[y] + 1
+    # print(z)
+    X_train = make_0_255(X_train)
+    label_all, centers, anchors = seqsc(X_train, k, m)
+    show_final_result(X_train, y_train, label_all,k)

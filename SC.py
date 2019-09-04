@@ -1,9 +1,9 @@
 import math
-from sklearn.cluster import SpectralClustering
-import numpy as np
 from keras.datasets import mnist
 import matplotlib.pyplot as plt
-from sklearn.cluster import KMeans
+from sklearn import (manifold, datasets, decomposition)
+import numpy as np
+from sklearn import cluster
 
 
 def build_distances_black(x_train):
@@ -11,43 +11,6 @@ def build_distances_black(x_train):
     for image in x_train:
         v.append(np.sum(image * image))
     return v
-
-
-#
-# def affinity(img_a, img_b):
-#     count = 0
-#     for i in range(0, 28):
-#         for j in range(0, 28):
-#             if not ((img_a[i][j] > 4 and img_b[i][j] > 4) or (img_a[i][j] < 5 and img_b[i][j] < 5)):
-#                 count = count + 1
-#     ans = math.exp((count/20))
-#     return ans
-#     # return count
-#
-#
-# def find_neighbors_graph(x_train):
-#     v = []
-#     for image1 in x_train:
-#         z = []
-#         for image2 in x_train:
-#             z.append(affinity(image1, image2))
-#         v.append(z)
-#     return v
-#
-#
-# def make_laplacian(A):
-#     b = A
-#     i = 0
-#     for row in b:
-#         z = 0
-#         count = 0
-#         for cell in row:
-#             z = z + cell
-#             row[count] = cell * -1
-#             count = count + 1
-#         row[i] = z
-#         i = i + 1
-#     return b
 
 
 def transform(X_train):
@@ -211,30 +174,14 @@ def showImage(images, rows, columns):
     return
 
 
-import matplotlib.pyplot as plt
-from matplotlib import offsetbox
-from sklearn import (manifold, datasets, decomposition)
-import numpy as np
-from sklearn import cluster
-
-(X_train, y_train), (X_test, y_test) = mnist.load_data()
-x_train = X_train[:700]
-y_train = y_train[:700]
-z = transform(x_train)
-X_spec = manifold.SpectralEmbedding(n_components=2, affinity='nearest_neighbors', gamma=None, random_state=None,
-                                    eigen_solver=None, n_neighbors=5).fit_transform(z)
-spectral = cluster.SpectralClustering(n_clusters=10, eigen_solver='arpack', affinity="nearest_neighbors")
-X = spectral.fit(X_spec)
-y_pred = spectral.fit_predict(X_spec)
-show_final_result(x_train, y_train, y_pred, 10)
-
-# clustering evaluation metrics
-# print(confusion_matrix(y_train, y_pred))
-# print(completeness_score(y_train, y_pred))
-
-# with plt.style.context('fivethirtyeight'):
-#     plt.title("Spectral embedding & spectral clustering on MNIST")
-#     plt.scatter(X_spec[:, 0], X_spec[:, 1], c=y_pred, s=50, cmap=plt.cm.get_cmap("jet", 10))
-#     plt.colorbar(ticks=range(10))
-#     plt.clim(-0.5, 9.5)
-# plt.show()
+def sc():
+    (X_train, y_train), (X_test, y_test) = mnist.load_data()
+    x_train = X_train[:700]
+    y_train = y_train[:700]
+    z = transform(x_train)
+    X_spec = manifold.SpectralEmbedding(n_components=2, affinity='nearest_neighbors', gamma=None, random_state=None,
+                                        eigen_solver=None, n_neighbors=5).fit_transform(z)
+    spectral = cluster.SpectralClustering(n_clusters=10, eigen_solver='arpack', affinity="nearest_neighbors")
+    X = spectral.fit(X_spec)
+    y_pred = spectral.fit_predict(X_spec)
+    show_final_result(x_train, y_train, y_pred, 10)
