@@ -106,7 +106,7 @@ def showImage(images, rows, columns):
         fig.add_subplot(rows, columns, i)
         plt.imshow(img, cmap='gray')
     # plt.show()
-
+    return
 
 def seqsc(x, k, m):
     print("SeqSC start")
@@ -177,9 +177,9 @@ def NMI(printable):
         for i in range(0,end_row):
             p = printable[i][j]/printable[end_row][j]
             p = P_C * PlogP(p)
-            print("H (Y = "+str(i)+" | C = " + str(j) + " ) = "+str(p)+" +", end=' ')
+            # print("H (Y = "+str(i)+" | C = " + str(j) + " ) = "+str(p)+" +", end=' ')
             temp = temp + p
-        print(" ")
+        # print(" ")
         H_Y_C = H_Y_C + temp
     I_Y_C = H_Y - H_Y_C
     ans = (2 * I_Y_C)/(H_Y+H_C)
@@ -218,13 +218,13 @@ def show_centroid(X_train, label_all,k):
         for i in range(0,len(centroid[0])-1):
             for j in range(0,len(centroid[0][0])-1):
                 centroid[s][i][j] = centroid[s][i][j]/counter[s]
-    c0 = []
-    cc0 = 0
-    for i in range(0,len(label_all)):
-        if label_all[i] == 0 :
-            c0.append(X_train[i])
-            cc0 = cc0 +1
-    showImage(c0, int(cc0 / 2), 2)
+    # c0 = []
+    # cc0 = 0
+    # for i in range(0,len(label_all)):
+    #     if label_all[i] == 0 :
+    #         c0.append(X_train[i])
+    #         cc0 = cc0 +1
+    # showImage(c0, int(cc0 / 2), 2)
     showImage(centroid,2,5)
 
 

@@ -12,6 +12,7 @@ def build_distances_black(x_train):
         v.append(np.sum(image * image))
     return v
 
+
 #
 # def affinity(img_a, img_b):
 #     count = 0
@@ -51,68 +52,66 @@ def build_distances_black(x_train):
 
 def transform(X_train):
     ans = []
-    for img in X_train :
+    for img in X_train:
         temp = []
-        for row in img :
+        for row in img:
             temp.extend(row)
         ans.append(temp)
         # print(temp)
     return ans
 
 
-
 def PlogP(p):
-    if p == 0 :
+    if p == 0:
         return 0
-    log = math.log(p,2)
+    log = math.log(p, 2)
     ans = -1 * p
     ans = ans * log
     return ans
 
 
 def NMI(printable):
-
     print("compute NMI ------------")
-    end_row = len(printable) -1
-    end_col = len(printable[0]) -1
+    end_row = len(printable) - 1
+    end_col = len(printable[0]) - 1
     H_Y = 0
     H_C = 0
     H_Y_C = 0
     I_Y_C = 0
-    for i in range(0,end_row):
-        p = printable[i][end_col]/printable[end_row][end_col]
+    for i in range(0, end_row):
+        p = printable[i][end_col] / printable[end_row][end_col]
         H_Y = H_Y + PlogP(p)
-    for i in range(0,end_col):
-        p =printable[end_row][i]/printable[end_row][end_col]
+    for i in range(0, end_col):
+        p = printable[end_row][i] / printable[end_row][end_col]
         H_C = H_C + PlogP(p)
-    print("H(Y) = "+ str(H_Y))
+    print("H(Y) = " + str(H_Y))
     print("H(C) = " + str(H_C))
-    for j in range(0,end_col):
+    for j in range(0, end_col):
         temp = 0
-        print("H (Y | C = "+str(j)+" ) = ", end = '')
-        P_C = printable[end_row][j]/printable[end_row][end_col]
-        for i in range(0,end_row):
-            p = printable[i][j]/printable[end_row][j]
+        print("H (Y | C = " + str(j) + " ) = ", end='')
+        P_C = printable[end_row][j] / printable[end_row][end_col]
+        for i in range(0, end_row):
+            p = printable[i][j] / printable[end_row][j]
             p = P_C * PlogP(p)
-            print("H (Y = "+str(i)+" | C = " + str(j) + " ) = "+str(p)+" +", end=' ')
+            # print("H (Y = " + str(i) + " | C = " + str(j) + " ) = " + str(p) + " +", end=' ')
             temp = temp + p
         print(" ")
         H_Y_C = H_Y_C + temp
     I_Y_C = H_Y - H_Y_C
-    ans = (2 * I_Y_C)/(H_Y+H_C)
-    ans = round(ans,3)
-    print("H(Y|C) = "+str(H_Y_C))
+    ans = (2 * I_Y_C) / (H_Y + H_C)
+    ans = round(ans, 3)
+    print("H(Y|C) = " + str(H_Y_C))
     print("I(Y;C) = " + str(I_Y_C))
     print("-----------------------")
-    print("NMI = "+str(ans))
+    print("NMI = " + str(ans))
     return ans
 
 
-def show_final_result(X_train, y_train, label_all):
+def show_final_result(X_train, y_train, label_all, k):
     fig, ax = plt.subplots(figsize=(8, 5))
     ax.scatter(y_train, build_distances_black(X_train), c=label_all, s=20)
     printable = []
-
+    show_centroid(X_train, label_all, k)
     for i in range(0, 11):
         temp = []
         for i in range(0, 11):
@@ -163,78 +162,53 @@ def show_final_result(X_train, y_train, label_all):
     return
 
 
-
-def cd_show_final_result(X_train,y_train,label_all):
-    fig, ax = plt.subplots(figsize=(8, 5))
-    ax.scatter(y_train, build_distances_black(X_train), c=label_all, s=20)
-    plt.show()
-    printable = []
-
-    for i in range (0 ,10):
+def show_centroid(X_train, label_all, k):
+    centroid = []
+    counter = []
+    for i in range(0, k):
+        counter.append(0)
+        print(i)
+    print("-----")
+    # build black
+    black = []
+    for i in range(len(X_train[0])):
         temp = []
-        for i in range(0, 10):
+        for j in range(len(X_train[0][0])):
             temp.append(0)
-        printable.append(temp)
-    for i in range (0,len(label_all)):
-        printable[label_all[i]][y_train[i]] = printable[label_all[i]][y_train[i]] +1
-    true = 0
-    allsum = 0
-    for i in range (0 ,10):
-        true = true + max(printable[i])
-        allsum = allsum + sum(printable[i])
-        print (str(i)+ " === 0("+str(printable[i][0])+ ") , 1("+str(printable[i][1])+ ") , 2("+str(printable[i][2])+ ") , 3("+str(printable[i][3])+ ") , 4("+str(printable[i][4])+ ") , 5("+str(printable[i][5])+ ") , 6("+str(printable[i][6]) + ") , 7("+str(printable[i][7])+ ") , 8("+str(printable[i][8])+ ") , 9("+str(printable[i][9])+")")
-    print ("accuracy : "+ str(true/allsum))
+        black.append(temp)
+    for i in range(k):
+        centroid.append(black)
+    for i in range(0, len(label_all) - 1):
+        print("counter " + str(label_all[i]) + " is : " + str(counter[label_all[i]]))
+        if counter[label_all[i]] > -1:
+            centroid[label_all[i]] = centroid[label_all[i]] + X_train[i]
+        else:
+            centroid.append(X_train[i])
+        counter[label_all[i]] = counter[label_all[i]] + 1
+    for s in range(0, k - 1):
+        for i in range(0, len(centroid[0]) - 1):
+            for j in range(0, len(centroid[0][0]) - 1):
+                centroid[s][i][j] = centroid[s][i][j] / counter[s]
+    # c0 = []
+    # cc0 = 0
+    # for i in range(0,len(label_all)):
+    #     if label_all[i] == 0 :
+    #         c0.append(X_train[i])
+    #         cc0 = cc0 +1
+    # showImage(c0, int(cc0 / 2), 2)
+    showImage(centroid, 2, 5)
     return
 
-#
-# (X_train, y_train), (X_test, y_test) = mnist.load_data()
-# i = 0
-# total_correct = 0
-# # to have faster run i slice the samples
-# x_train = X_train[:500]
-# y_train = y_train[:500]
 
-# A = find_neighbors_graph(x_train)
-# # print (len(A[69]))
-#
-# L = make_laplacian(A)
-# # print ("Laplacian matrix -------------")
-# # print(L)
-#
-# eigval, eigvec = np.linalg.eig(L)
-# # print ("EigenValue matrix -------------")
-# x = []
-#
-# for i, value in enumerate(eigval):
-#     print("Eigenvector:", eigvec[:, i], ", Eigenvalue:", value)
-#     x.append(i)
-#
-# # sort these based on the eigenvalues
-# eigvec = eigvec[:, np.argsort(eigval)]
-# eigval = eigval[np.argsort(eigval)]
-#
-# fig, ax = plt.subplots(figsize=(6, 4))
-# ax.scatter(x, eigval, s=25)
-#
-# # print(eigval[0:9])
-#
-# kmeans = KMeans(n_clusters=10).fit(eigvec[:, 1:10])
-# # print(kmeans.labels_)
-#
-# fig, ax = plt.subplots(figsize=(6, 4))
-# ax.scatter(y_train, build_distances_black(x_train), c=y_train, s=25)
-#
-#
-# fig, ax = plt.subplots(figsize=(6, 4))
-# ax.scatter(y_train, build_distances_black(x_train), c=kmeans.labels_, s=25)
-# plt.show()
+def showImage(images, rows, columns):
+    fig = plt.figure(figsize=(8, 8))
+    for i in range(1, columns * rows + 1):
+        img = images[i - 1]
+        fig.add_subplot(rows, columns, i)
+        plt.imshow(img, cmap='gray')
+    # plt.show()
 
-
-
-# print(z)
-# clustering = SpectralClustering(n_clusters=10,).fit(z)
-# show_final_result(x_train,y_train,clustering.labels_)
-#
+    return
 
 
 import matplotlib.pyplot as plt
@@ -242,16 +216,17 @@ from matplotlib import offsetbox
 from sklearn import (manifold, datasets, decomposition)
 import numpy as np
 from sklearn import cluster
+
 (X_train, y_train), (X_test, y_test) = mnist.load_data()
-x_train = X_train[:500]
-y_train = y_train[:500]
+x_train = X_train[:700]
+y_train = y_train[:700]
 z = transform(x_train)
 X_spec = manifold.SpectralEmbedding(n_components=2, affinity='nearest_neighbors', gamma=None, random_state=None,
                                     eigen_solver=None, n_neighbors=5).fit_transform(z)
 spectral = cluster.SpectralClustering(n_clusters=10, eigen_solver='arpack', affinity="nearest_neighbors")
 X = spectral.fit(X_spec)
 y_pred = spectral.fit_predict(X_spec)
-show_final_result(x_train,y_train,y_pred)
+show_final_result(x_train, y_train, y_pred, 10)
 
 # clustering evaluation metrics
 # print(confusion_matrix(y_train, y_pred))
