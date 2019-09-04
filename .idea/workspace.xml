@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e943ce26-2c4b-4c25-8f66-ef9e2f1f80f5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/SC-multiC.py" beforeDir="false" afterPath="$PROJECT_DIR$/SC-multiC.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SeqKM.py" beforeDir="false" afterPath="$PROJECT_DIR$/SeqKM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SeqSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/SeqSC.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,13 +29,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="72" />
-          <entry key="py" value="16496" />
+          <entry key="py" value="17484" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="72" />
-          <entry key="Python" value="16496" />
+          <entry key="Python" value="17484" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -68,8 +70,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SC-multiC.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1672">
-              <caret line="81" column="27" selection-start-line="81" selection-start-column="27" selection-end-line="81" selection-end-column="27" />
+            <state relative-caret-position="-1913">
+              <caret line="153" column="24" lean-forward="true" selection-start-line="153" selection-start-column="24" selection-end-line="153" selection-end-column="24" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -80,21 +82,23 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SeqSC.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="29">
-              <caret line="140" column="21" lean-forward="true" selection-start-line="140" selection-start-column="21" selection-end-line="140" selection-end-column="21" />
+            <state relative-caret-position="44">
+              <caret line="290" column="20" selection-start-line="290" selection-start-column="20" selection-end-line="290" selection-end-column="20" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1567516567060" expanded="true" signature="650:1263" ph="..." />
+                <marker date="1567579568467" expanded="true" signature="650:1263" ph="..." />
+                <marker date="1567579568467" expanded="true" signature="4635:5754" ph="..." />
+                <marker date="1567579568467" expanded="true" signature="5807:5812" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SeqKM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="80" column="32" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
+            <state relative-caret-position="147">
+              <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -102,10 +106,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Kmeans.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="873">
               <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" selection-end-column="34" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
@@ -173,9 +177,9 @@
         <option value="$PROJECT_DIR$/gui.py" />
         <option value="$PROJECT_DIR$/MyGui.py" />
         <option value="$PROJECT_DIR$/dady.py" />
-        <option value="$PROJECT_DIR$/SC-multiC.py" />
         <option value="$PROJECT_DIR$/SSVD.py" />
         <option value="$PROJECT_DIR$/Kmeans.py" />
+        <option value="$PROJECT_DIR$/SC-multiC.py" />
         <option value="$PROJECT_DIR$/SeqSC.py" />
         <option value="$PROJECT_DIR$/SeqKM.py" />
       </list>
@@ -343,8 +347,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.SeqSC" />
-        <item itemvalue="Python.SeqKM" />
         <item itemvalue="Python.SC-multiC" />
+        <item itemvalue="Python.SeqKM" />
         <item itemvalue="Python.SSVD" />
         <item itemvalue="Python.dady" />
       </list>
@@ -374,7 +378,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2400636" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -473,16 +476,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SC-multiC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1672">
-          <caret line="81" column="27" selection-start-line="81" selection-start-column="27" selection-end-line="81" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SSVD.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -493,10 +486,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SeqKM.py">
+    <entry file="file://$PROJECT_DIR$/SC-multiC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="80" column="32" selection-start-line="80" selection-start-column="32" selection-end-line="80" selection-end-column="32" />
+        <state relative-caret-position="-1913">
+          <caret line="153" column="24" lean-forward="true" selection-start-line="153" selection-start-column="24" selection-end-line="153" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Kmeans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="873">
+          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" selection-end-column="34" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
@@ -505,19 +508,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SeqSC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="140" column="21" lean-forward="true" selection-start-line="140" selection-start-column="21" selection-end-line="140" selection-end-column="21" />
+        <state relative-caret-position="44">
+          <caret line="290" column="20" selection-start-line="290" selection-start-column="20" selection-end-line="290" selection-end-column="20" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
-            <marker date="1567516567060" expanded="true" signature="650:1263" ph="..." />
+            <marker date="1567579568467" expanded="true" signature="650:1263" ph="..." />
+            <marker date="1567579568467" expanded="true" signature="4635:5754" ph="..." />
+            <marker date="1567579568467" expanded="true" signature="5807:5812" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Kmeans.py">
+    <entry file="file://$PROJECT_DIR$/SeqKM.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="52" lean-forward="true" selection-start-line="52" selection-end-line="52" selection-end-column="34" />
+        <state relative-caret-position="147">
+          <caret line="36" column="25" lean-forward="true" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

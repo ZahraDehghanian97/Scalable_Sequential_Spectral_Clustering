@@ -18,7 +18,7 @@ def seqkm(k, Images, SampleSize):
     PredictedLabels = []
     f = k
     while f > 0:
-        v.append(1)
+        v.append(100)
         f = f - 1
     if SampleSize<len(Images) :
         M = rd.choices(Images, k=SampleSize)
@@ -28,15 +28,15 @@ def seqkm(k, Images, SampleSize):
     centers = Kmeans.KMeansPlusplus(M, k)
     f = 0
     i = 0
-    for image in Images:
-        distances = [euclidean_distance(centroid, image)
-                     for (centroid) in centers]
-        j = distances.index(min(distances))
-        PredictedLabels.append(j)
-        i = i + 1
-        v[j] = v[j] + 1
-        epsilon = 1 / v[j]
-        f = f + 1
+    # for image in Images:
+    #     distances = [euclidean_distance(centroid, image)
+    #                  for (centroid) in centers]
+    #     j = distances.index(min(distances))
+    #     PredictedLabels.append(j)
+    #     i = i + 1
+    #     v[j] = v[j] + 1
+    #     epsilon = 1 / v[j]
+    #     f = f + 1
         # if SampleSize< len(Images) :
         #     print("update centroid number " + str(j))
         #     for i in range(0, len(image)):
@@ -59,23 +59,10 @@ def seqkm(k, Images, SampleSize):
 
 
 from sklearn.cluster import KMeans
-
-
-def compute_summary(A):
-    ans = []
-    for a in A :
-        temp = 0
-        for i in a :
-            temp = temp + i**2
-        ans.append(temp)
-    return ans
 def seqKM(k , A):
+    print("SeqKM start")
+    print("Kmeans++ done")
     kmeans = KMeans(n_clusters=k,init='k-means++')
     kmeans.fit(A)
-    S_A = compute_summary(A)
-    indexs = []
-    for c in kmeans.cluster_centers_ :
-        S_C = 0
-        for i in c : S_C = S_C + i**2
-        indexs.append( S_A.index(S_C))
-    return kmeans.labels_,indexs
+    print("SeqKM done")
+    return kmeans.labels_,kmeans.labels_

@@ -60,6 +60,54 @@ def transform(X_train):
     return ans
 
 
+
+def PlogP(p):
+    if p == 0 :
+        return 0
+    log = math.log(p,2)
+    ans = -1 * p
+    ans = ans * log
+    return ans
+
+
+def NMI(printable):
+
+    print("compute NMI ------------")
+    end_row = len(printable) -1
+    end_col = len(printable[0]) -1
+    H_Y = 0
+    H_C = 0
+    H_Y_C = 0
+    I_Y_C = 0
+    for i in range(0,end_row):
+        p = printable[i][end_col]/printable[end_row][end_col]
+        H_Y = H_Y + PlogP(p)
+    for i in range(0,end_col):
+        p =printable[end_row][i]/printable[end_row][end_col]
+        H_C = H_C + PlogP(p)
+    print("H(Y) = "+ str(H_Y))
+    print("H(C) = " + str(H_C))
+    for j in range(0,end_col):
+        temp = 0
+        print("H (Y | C = "+str(j)+" ) = ", end = '')
+        P_C = printable[end_row][j]/printable[end_row][end_col]
+        for i in range(0,end_row):
+            p = printable[i][j]/printable[end_row][j]
+            p = P_C * PlogP(p)
+            print("H (Y = "+str(i)+" | C = " + str(j) + " ) = "+str(p)+" +", end=' ')
+            temp = temp + p
+        print(" ")
+        H_Y_C = H_Y_C + temp
+    I_Y_C = H_Y - H_Y_C
+    ans = (2 * I_Y_C)/(H_Y+H_C)
+    ans = round(ans,3)
+    print("H(Y|C) = "+str(H_Y_C))
+    print("I(Y;C) = " + str(I_Y_C))
+    print("-----------------------")
+    print("NMI = "+str(ans))
+    return ans
+
+
 def show_final_result(X_train, y_train, label_all):
     fig, ax = plt.subplots(figsize=(8, 5))
     ax.scatter(y_train, build_distances_black(X_train), c=label_all, s=20)
@@ -76,6 +124,9 @@ def show_final_result(X_train, y_train, label_all):
         printable[y_train[i]][10] = printable[y_train[i]][10] + 1
         printable[10][label_all[i]] = printable[10][label_all[i]] + 1
     printable[10][10] = sum(printable[10])
+
+    nmi = NMI(printable)
+
     result = []
     for i in range(2):
         temp = []
@@ -105,10 +156,9 @@ def show_final_result(X_train, y_train, label_all):
     axs[1].axis('tight')
     axs[1].axis('off')
     table = axs[0].table(cellText=printable, rowLabels=row, colLabels=column, loc='center')
-    row = ['real label', 'clusters']
+    row = ['classes', 'clusters']
     column = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'all']
     table2 = axs[1].table(cellText=result, rowLabels=row, colLabels=column, loc='center')
-
     plt.show()
     return
 
