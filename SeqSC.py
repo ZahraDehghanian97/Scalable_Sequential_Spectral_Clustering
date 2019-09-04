@@ -172,7 +172,7 @@ def NMI(printable):
     print("H(C) = " + str(H_C))
     for j in range(0,end_col):
         temp = 0
-        print("H (Y | C = "+str(j)+" ) = ", end = '')
+        # print("H (Y | C = "+str(j)+" ) = ", end = '')
         P_C = printable[end_row][j]/printable[end_row][end_col]
         for i in range(0,end_row):
             p = printable[i][j]/printable[end_row][j]
@@ -208,7 +208,7 @@ def show_centroid(X_train, label_all,k):
     for i in range(k):
         centroid.append(black)
     for i in range (0, len(label_all)-1):
-        print("counter "+str(label_all[i])+" is : "+str(counter[label_all[i]]))
+        # print("counter "+str(label_all[i])+" is : "+str(counter[label_all[i]]))
         if counter[label_all[i]] >-1:
             centroid[label_all[i]] = centroid[label_all[i]] + X_train[i]
         else :
@@ -284,19 +284,6 @@ def show_final_result(X_train, y_train, label_all,k):
     plt.show()
     return
 
-
-(X_train, y_train), (X_test, y_test) = mnist.load_data()
-i = 0
-X_train = X_train[:700]
-y_train = y_train[:700]
-k = 10
-m =int( len(X_train)/5)
-z = []
-for i in range(10):
-    z.append(0)
-for y in y_train:
-    z[y] = z[y] + 1
-# print(z)
 def make_0_255(X_train):
     for k in range(len(X_train) ):
         for i in range(len(X_train[0])):
@@ -308,7 +295,18 @@ def make_0_255(X_train):
     return X_train
 
 
-
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
+i = 0
+X_train = X_train[:700]
+y_train = y_train[:700]
+k = 10
+m =int( len(X_train))
+z = []
+for i in range(10):
+    z.append(0)
+for y in y_train:
+    z[y] = z[y] + 1
+# print(z)
 X_train = make_0_255(X_train)
 label_all, centers, anchors = seqsc(X_train, k, m)
 show_final_result(X_train, y_train, label_all,k)
