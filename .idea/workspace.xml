@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e943ce26-2c4b-4c25-8f66-ef9e2f1f80f5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/MyGui.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyGui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeqSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/SeqSC.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,13 +27,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="72" />
-          <entry key="py" value="17525" />
+          <entry key="py" value="17622" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="72" />
-          <entry key="Python" value="17525" />
+          <entry key="Python" value="17622" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -66,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/MyGui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="37" />
+            <state relative-caret-position="45">
+              <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -90,11 +89,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SeqSC.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="309" lean-forward="true" selection-start-line="309" selection-end-line="309" />
+            <state relative-caret-position="156">
+              <caret line="312" lean-forward="true" selection-start-line="312" selection-end-line="312" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <marker date="1567584116131" expanded="true" signature="650:1263" ph="..." />
@@ -191,8 +190,8 @@
         <option value="$PROJECT_DIR$/Kmeans.py" />
         <option value="$PROJECT_DIR$/SeqKM.py" />
         <option value="$PROJECT_DIR$/SC-multiC.py" />
-        <option value="$PROJECT_DIR$/MyGui.py" />
         <option value="$PROJECT_DIR$/SeqSC.py" />
+        <option value="$PROJECT_DIR$/MyGui.py" />
       </list>
     </option>
   </component>
@@ -242,7 +241,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.SeqSC">
+  <component name="RunManager" selected="Python.MyGui">
     <configuration name="MyGui" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="code" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -357,8 +356,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.SeqSC" />
         <item itemvalue="Python.MyGui" />
+        <item itemvalue="Python.SeqSC" />
         <item itemvalue="Python.SC-multiC" />
         <item itemvalue="Python.SeqKM" />
         <item itemvalue="Python.SSVD" />
@@ -521,25 +520,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyGui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" column="37" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SeqSC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="309" lean-forward="true" selection-start-line="309" selection-end-line="309" />
+        <state relative-caret-position="156">
+          <caret line="312" lean-forward="true" selection-start-line="312" selection-end-line="312" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
             <marker date="1567584116131" expanded="true" signature="650:1263" ph="..." />
             <marker date="1567584116131" expanded="true" signature="4651:5786" ph="..." />
             <marker date="1567584116131" expanded="true" signature="5839:5844" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/MyGui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>

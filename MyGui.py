@@ -19,19 +19,22 @@ root.rowconfigure(0, weight=1)
 feet = StringVar()
 meters = StringVar()
 
-feet_entry = ttk.Entry(mainframe, width=7, textvariable=feet)
-feet_entry.grid(column=2, row=1, sticky=(W, E))
+# feet_entry = ttk.Entry(mainframe, width=7, textvariable=feet)
+# feet_entry.grid(column=2, row=1, sticky=(W, E))
+ttk.Label(mainframe, text="choose clustering type first ...").grid(column=1, row=1, sticky=W)
 
-ttk.Label(mainframe, textvariable=meters).grid(column=2, row=2, sticky=(W, E))
-ttk.Button(mainframe, text="Calculate", command=calculate).grid(column=3, row=3, sticky=W)
+ttk.Radiobutton(root, text="Kmeans", value=1).grid(column=1, row=2, sticky=(W))
+ttk.Radiobutton(root, text="Spectral Clustering",value=2).grid(column=2, row=2, sticky=(W))
+ttk.Radiobutton(root, text="SeqSC",  value=3).grid(column=3, row=2, sticky=(W))
+# ttk.Label(mainframe, textvariable=meters).grid(column=2, row=2, sticky=(W, E))
+ttk.Button(mainframe, text="Cluster", command=calculate).grid(column=3, row=3, sticky=W)
 
-ttk.Label(mainframe, text="feet").grid(column=3, row=1, sticky=W)
-ttk.Label(mainframe, text="is equivalent to").grid(column=1, row=2, sticky=E)
-ttk.Label(mainframe, text="meters").grid(column=3, row=2, sticky=W)
+# ttk.Label(mainframe, text="feet").grid(column=3, row=1, sticky=W)
+# ttk.Label(mainframe, text="is equivalent to").grid(column=1, row=2, sticky=E)
 
-for child in mainframe.winfo_children(): child.grid_configure(padx=5, pady=5)
-
-feet_entry.focus()
-root.bind('<Return>', calculate)
+# for child in mainframe.winfo_children(): child.grid_configure(padx=5, pady=5)
+#
+# feet_entry.focus()
+# root.bind('<Return>', calculate)
 
 root.mainloop()
