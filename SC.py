@@ -173,15 +173,27 @@ def showImage(images, rows, columns):
 
     return
 
+def make_0_255(X_train):
+    for k in range(len(X_train) ):
+        for i in range(len(X_train[0])):
+            for j in range(len(X_train[0][0])):
+                if X_train[k][i][j]<20 :
+                    X_train[k][i][j] = 0
+                else :
+                    X_train[k][i][j] = 255
+    return X_train
 
-def guisc():
+def guisc(k,n,f):
     (X_train, y_train), (X_test, y_test) = mnist.load_data()
-    x_train = X_train[:700]
-    y_train = y_train[:700]
+    x_train = X_train[:n]
+    y_train = y_train[:n]
+    if (f > 0):
+        print("apply filter")
+        x_train = make_0_255(x_train)
     z = transform(x_train)
     X_spec = manifold.SpectralEmbedding(n_components=2, affinity='nearest_neighbors', gamma=None, random_state=None,
                                         eigen_solver=None, n_neighbors=5).fit_transform(z)
-    spectral = cluster.SpectralClustering(n_clusters=10, eigen_solver='arpack', affinity="nearest_neighbors")
+    spectral = cluster.SpectralClustering(n_clusters=k, eigen_solver='arpack', affinity="nearest_neighbors")
     X = spectral.fit(X_spec)
     y_pred = spectral.fit_predict(X_spec)
-    show_final_result(x_train, y_train, y_pred, 10)
+    return x_train, y_train, y_pred

@@ -3,6 +3,7 @@ import math
 from keras.datasets import mnist
 from sklearn.cluster import KMeans
 
+
 def euclidean_distance(img_a, img_b):
     count = 0
     for i in range(0, len(img_a)):
@@ -45,7 +46,6 @@ def KMeansPlusPlus(images, k):
 # main kmeans for test and compare
 
 
-
 def KMeansPlusplus(M, k):
     kmeans = KMeans(n_clusters=k, init='k-means++')
     kmeans.fit(M)
@@ -59,6 +59,7 @@ def kmeans(M, k):
     print("Kmeans done")
     return kmeans.cluster_centers_, kmeans.labels_
 
+
 def transform(X_train):
     ans = []
     for img in X_train:
@@ -69,22 +70,36 @@ def transform(X_train):
     return ans
 
 
-def guikmeansplusplus():
+def guikmeansplusplus(k, n, f):
     (X_train, y_train), (X_test, y_test) = mnist.load_data()
-    i = 0
-    X_train = X_train[:700]
-    y_train = y_train[:700]
-    k = 10
+    X_train = X_train[:n]
+    y_train = y_train[:n]
+    if (f > 0):
+        print("apply filter")
+        X_train = make_0_255(X_train)
     my_x = transform(X_train)
     centers, label_all = KMeansPlusplus(my_x, k)
-    # show_final_result(X_train, y_train, label_all,k)
+    return X_train, y_train, label_all
 
-def guikmeans():
+
+def make_0_255(X_train):
+    for k in range(len(X_train)):
+        for i in range(len(X_train[0])):
+            for j in range(len(X_train[0][0])):
+                if X_train[k][i][j] < 20:
+                    X_train[k][i][j] = 0
+                else:
+                    X_train[k][i][j] = 255
+    return X_train
+
+
+def guikmeans(k, n, f):
     (X_train, y_train), (X_test, y_test) = mnist.load_data()
-    i = 0
-    X_train = X_train[:700]
-    y_train = y_train[:700]
-    k = 10
+    X_train = X_train[:n]
+    y_train = y_train[:n]
+    if (f > 0):
+        print("apply filter")
+        X_train = make_0_255(X_train)
     my_x = transform(X_train)
     centers, label_all = kmeans(my_x, k)
-    # show_final_result(X_train, y_train, label_all,k)
+    return X_train, y_train, label_all
