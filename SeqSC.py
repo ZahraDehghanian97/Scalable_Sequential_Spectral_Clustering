@@ -306,6 +306,7 @@ def guiseqsc(k,n,m,f):
         z[y] = z[y] + 1
     # print(z)
     if(f >0) :
+        print("apply filter")
         X_train = make_0_255(X_train)
     label_all, centers, anchors = seqsc(X_train, k, m)
     show_final_result(X_train, y_train, label_all,k)
