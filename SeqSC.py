@@ -17,13 +17,6 @@ def kernel(xi, uj):
     return k_ans
 
 
-def sum_kernel(xi, anchors, ux):
-    r = 0
-    for u in ux:
-        r = r + kernel(xi, anchors[u])
-    return r
-
-
 def euclidean_distance(a, b):
     return np.sum(np.subtract(a, b) ** 2)
 
@@ -78,7 +71,7 @@ def retransform(X_train):
 def seqsc(x, k, m):
     print("SeqSC start")
     my_x = transform(x)
-    v, label_all, anchors = SeqKM.seqkm(m, my_x, 3 * m)
+    v,label_all, anchors = SeqKM.seqkm(m, my_x,len(my_x))
     p = 5
     d = [0] * m
     lenx = len(x)
@@ -94,9 +87,13 @@ def seqsc(x, k, m):
     print("build Z^")
     for i in range(0, len(x)):
         ux = compute_p_nearest(my_x[i], p, anchors)
+        sum_k = 0
         for j in ux:
-            z[i][j] = kernel(my_x[i], anchors[j]) / sum_kernel(my_x[i], anchors, ux)
+            z[i][j] = kernel(my_x[i], anchors[j])
+            sum_k+=z[i][j]
             d[j] = d[j] + z[i][j]
+        for j in ux:
+            z[i][j]/=sum_k
     d = np.diag(d)
     d = scipy.linalg.fractional_matrix_power(d, -0.5)
     for s in range(0, len(x)):

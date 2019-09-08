@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import SeqSC
 from keras.datasets import mnist
 from tkinter.filedialog import askopenfilename
-
+import time
 
 def Open():
     askopenfilename(initialdir='Desktop')
@@ -65,6 +65,7 @@ def nmi():
     result = result + ("I(Y;C) = " + str(I_Y_C)) + "\n"
     result = result + ("-----------------------") + "\n"
     result = result + ("NMI = " + str(ans))
+    print("NMI = " + str(ans))
     global asli
     nmiroot = Toplevel(asli)
     nmiroot.title("NMI")
@@ -195,7 +196,11 @@ def runseqsc():
         print("please change 0 value")
         return
     else:
-        x, y, labels = SeqSC.guiseqsc(t_k, t_n, t_n, t_f)
+        print("start timer for SeqSC")
+        time_start = time.clock()
+        x, y, labels = SeqSC.guiseqsc(t_k, t_n, t_m, t_f)
+        elapsed = time.clock()-time_start
+        print("run time : "+str(elapsed))
         show_result()
     return
 
@@ -223,7 +228,11 @@ def runsc():
         print("please change 0 value")
         return
     else:
+        print("start timer for SC")
+        time_start = time.clock()
         x, y, labels = SC.guisc(t_k, t_n, t_f)
+        elapsed = time.clock() - time_start
+        print("run time : " + str(elapsed))
         show_result()
     return
 
@@ -239,7 +248,11 @@ def runkmeansplusplus():
         print("please change 0 value")
         return
     else:
+        print("start timer for KMeans++")
+        time_start = time.clock()
         x, y, labels = Kmeans.guikmeansplusplus(t_k, t_n, t_f)
+        elapsed = time.clock() - time_start
+        print("run time : " + str(elapsed))
         show_result()
     return
 
@@ -255,7 +268,11 @@ def runkmeans():
         print("please change 0 value")
         return
     else:
+        print("start timer for KMeans")
+        time_start = time.clock()
         x, y, labels = Kmeans.guikmeans(t_k, t_n, t_f)
+        elapsed = time.clock() - time_start
+        print("run time : " + str(elapsed))
         show_result()
     return
 

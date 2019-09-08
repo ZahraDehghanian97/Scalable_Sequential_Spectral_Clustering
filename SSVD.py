@@ -4,21 +4,25 @@ from scipy.linalg import svd
 
 
 def ssvd(z):
-    zt = np.transpose(z)
-    s = []
-    v = []
-    for row in zt:
-        temp = []
-        for col in z:
-            temp.append(np.matmul(row, col))
-        s.append(temp)
-    B, sigma = np.linalg.eig(s)
-    sigma = fractional_matrix_power(sigma, 0.5)
-    sigma_inverse = fractional_matrix_power(sigma, -1)
-    R = np.matmul(sigma_inverse, B)
+    print("SSVD start")
+    # zt = np.transpose(z)
+    # s = []
+    # v = []
+    # for row in zt:
+    #     temp = []
+    #     for col in z:
+    #         temp.append(np.matmul(row, col))
+    #     s.append(temp)
+    # B, sigma = np.linalg.eig(s)
+    # sigma = fractional_matrix_power(sigma, 0.5)
+    # sigma_inverse = fractional_matrix_power(sigma, -1)
+    # R = np.matmul(sigma_inverse, B)
+    # A = []
+    # for zi in z:
+    #     A.append(np.matmul(zi, R))
     A = []
-    for zi in z:
-        A.append(np.matmul(zi, R))
+    B= []
+    sigma= []
     return show_result(z, A, sigma, B)
 
 
