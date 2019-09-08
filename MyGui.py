@@ -265,7 +265,7 @@ def setting():
     type = v.get()
     if type == 1:
         root2 = Toplevel(asli)
-        root2.title('Clustering')
+        root2.title('ُSpectral Clustering')
         Label(root2, text="""please check desired value :""").grid(row=0, column=0, columnspan=3)
         Label(root2, text=""" """).grid(row=1, column=0)
         k_entry = Entry(root2, width=7, textvariable=k)
@@ -285,7 +285,7 @@ def setting():
 
     if type == 2:
         root2 = Toplevel(asli)
-        root2.title('Clustering')
+        root2.title('Sequential Spectral Clustering')
         Label(root2, text="""please check desired value :""").grid(row=0, column=0, columnspan=3)
         Label(root2, text=""" """).grid(row=1, column=0)
         k_entry = Entry(root2, width=7, textvariable=k)
@@ -307,7 +307,7 @@ def setting():
         root2.mainloop()
     if type == 3:
         root2 = Toplevel(asli)
-        root2.title('Clustering')
+        root2.title('KMeans Clustering')
         Label(root2, text="""please check desired value :""").grid(row=0, column=0, columnspan=3)
         Label(root2, text=""" """).grid(row=1, column=0)
         k_entry = Entry(root2, width=7, textvariable=k)
@@ -327,7 +327,7 @@ def setting():
 
     if type == 4:
         root2 = Toplevel(asli)
-        root2.title('Clustering')
+        root2.title('KMeans++ Clustering')
         Label(root2, text="""please check desired value :""").grid(row=0, column=0, columnspan=3)
         Label(root2, text=""" """).grid(row=1, column=0)
         k_entry = Entry(root2, width=7, textvariable=k)

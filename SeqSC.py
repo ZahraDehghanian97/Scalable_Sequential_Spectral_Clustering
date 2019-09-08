@@ -6,7 +6,6 @@ import SeqKM
 from keras.datasets import mnist
 
 
-
 # gussian kernel : should add some number to cordinate
 def kernel(xi, uj):
     # uj = uj[0]
@@ -31,7 +30,6 @@ def euclidean_distance(a, b):
 
 def compute_p_nearest(xi, p, anchors):
     distances = []
-    my_anchor = anchors
     ans = []
     counter = 0
     for anchor in anchors:
@@ -39,23 +37,9 @@ def compute_p_nearest(xi, p, anchors):
         counter = counter + 1
         distances.append(euclidean_distance(xi, anchor))
     ind = np.argsort(distances)
-    # my_anchor = np.array(my_anchor)  # This is the key line
-    # ans = my_anchor[ind]
     ans = np.array(ans)
     ans = ans[ind]
     return (ans[0:p])
-
-
-def normalize(a):
-    temp = []
-    counter = 0
-    for i in a:
-        temp.append([])
-        for j in i:
-            temp[counter].append(j)
-        counter = counter + 1
-    # print(temp)
-    return temp
 
 
 def build_A(A, k):
@@ -91,15 +75,10 @@ def retransform(X_train):
     return ans
 
 
-
-
 def seqsc(x, k, m):
     print("SeqSC start")
     my_x = transform(x)
     v, label_all, anchors = SeqKM.seqkm(m, my_x, 3 * m)
-    # pic_anchors = retransform(anchors)
-    # showImage(pic_anchors, 5, int(m / 5))
-    # my_x = transform(x)
     p = 5
     d = [0] * m
     lenx = len(x)
@@ -124,20 +103,23 @@ def seqsc(x, k, m):
         z_bar[s] = np.matmul(z[s], d)
     A, sigma, B = SSVD.ssvd(z_bar)
     A_my = build_A(A, k)
-    label_all, centers = SeqKM.seqKM(k, A_my )
+    label_all, centers = SeqKM.seqKM(k, A_my)
     print("SeqSC done")
     return label_all, centers, anchors
+
+
 def make_0_255(X_train):
-    for k in range(len(X_train) ):
+    for k in range(len(X_train)):
         for i in range(len(X_train[0])):
             for j in range(len(X_train[0][0])):
-                if X_train[k][i][j]<20 :
+                if X_train[k][i][j] < 20:
                     X_train[k][i][j] = 0
-                else :
+                else:
                     X_train[k][i][j] = 255
     return X_train
 
-def guiseqsc(k,n,m,f):
+
+def guiseqsc(k, n, m, f):
     (X_train, y_train), (X_test, y_test) = mnist.load_data()
     X_train = X_train[0:n]
     y_train = y_train[0:n]
@@ -149,7 +131,7 @@ def guiseqsc(k,n,m,f):
     for y in y_train:
         z[y] = z[y] + 1
     # print(z)
-    if(f >0) :
+    if (f > 0):
         print("apply filter")
         X_train = make_0_255(X_train)
     label_all, centers, anchors = seqsc(X_train, k, m)
