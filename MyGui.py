@@ -9,6 +9,7 @@ from keras.datasets import mnist
 from tkinter.filedialog import askopenfilename
 import time
 
+
 def Open():
     askopenfilename(initialdir='Desktop')
 
@@ -184,6 +185,19 @@ def chart():
     return
 
 
+def show_result():
+    root3 = Toplevel(asli)
+    root3.title('Results')
+    Button(root3, text='NMI', command=nmi, height=2, width=10).grid(padx=3, pady=3, row=0, column=0, sticky=W)
+    Button(root3, text='centroids', command=centroid, height=2, width=10).grid(padx=3, pady=3, row=0, column=2,
+                                                                               sticky=W)
+    Button(root3, text='distribution', command=distribution, height=2, width=10).grid(padx=3, pady=3, row=2, column=0,
+                                                                                      sticky=W)
+    Button(root3, text='chart', height=2, command=chart, width=10).grid(padx=3, pady=3, row=2, column=2, sticky=W)
+    Label(root3, text="""choose report """, width=20).grid(row=1, column=1)
+    return
+
+
 def runseqsc():
     global k, n, m, f, x, y, labels, asli
     t_k = k.get()
@@ -197,24 +211,12 @@ def runseqsc():
         return
     else:
         print("start timer for SeqSC")
-        time_start = time.clock()
+        time_start = time.perf_counter()
         x, y, labels = SeqSC.guiseqsc(t_k, t_n, t_m, t_f)
-        elapsed = time.clock()-time_start
-        print("run time : "+str(elapsed))
+        elapsed = time.perf_counter() - time_start
+        print("run time : " + str(elapsed))
         show_result()
     return
-
-
-def show_result():
-    root3 = Toplevel(asli)
-    root3.title('Results')
-    Button(root3, text='NMI', command=nmi, height=2, width=10).grid(padx=3, pady=3, row=0, column=0, sticky=W)
-    Button(root3, text='centroids', command=centroid, height=2, width=10).grid(padx=3, pady=3, row=0, column=2,
-                                                                               sticky=W)
-    Button(root3, text='distribution', command=distribution, height=2, width=10).grid(padx=3, pady=3, row=2, column=0,
-                                                                                      sticky=W)
-    Button(root3, text='chart', height=2, command=chart, width=10).grid(padx=3, pady=3, row=2, column=2, sticky=W)
-    Label(root3, text="""choose report """, width=20).grid(row=1, column=1)
 
 
 def runsc():
@@ -229,9 +231,9 @@ def runsc():
         return
     else:
         print("start timer for SC")
-        time_start = time.clock()
+        time_start = time.perf_counter()
         x, y, labels = SC.guisc(t_k, t_n, t_f)
-        elapsed = time.clock() - time_start
+        elapsed = time.perf_counter() - time_start
         print("run time : " + str(elapsed))
         show_result()
     return
@@ -249,9 +251,9 @@ def runkmeansplusplus():
         return
     else:
         print("start timer for KMeans++")
-        time_start = time.clock()
+        time_start = time.perf_counter()
         x, y, labels = Kmeans.guikmeansplusplus(t_k, t_n, t_f)
-        elapsed = time.clock() - time_start
+        elapsed = time.perf_counter() - time_start
         print("run time : " + str(elapsed))
         show_result()
     return
@@ -269,9 +271,9 @@ def runkmeans():
         return
     else:
         print("start timer for KMeans")
-        time_start = time.clock()
+        time_start = time.perf_counter()
         x, y, labels = Kmeans.guikmeans(t_k, t_n, t_f)
-        elapsed = time.clock() - time_start
+        elapsed = time.perf_counter() - time_start
         print("run time : " + str(elapsed))
         show_result()
     return

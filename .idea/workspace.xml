@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e943ce26-2c4b-4c25-8f66-ef9e2f1f80f5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyGui.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyGui.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SSVD.py" beforeDir="false" afterPath="$PROJECT_DIR$/SSVD.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeqKM.py" beforeDir="false" afterPath="$PROJECT_DIR$/SeqKM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SeqSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/SeqSC.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,13 +29,13 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="75" />
-          <entry key="py" value="20822" />
+          <entry key="py" value="20831" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="75" />
-          <entry key="Python" value="20822" />
+          <entry key="Python" value="20831" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -72,11 +70,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyGui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-635">
-              <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
+            <state relative-caret-position="-1940">
+              <caret line="187" column="8" lean-forward="true" selection-start-line="187" selection-start-column="8" selection-end-line="187" selection-end-column="8" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <marker date="1567929146334" expanded="true" signature="3447:5251" ph="..." />
+                <marker date="1567933813943" expanded="true" signature="3448:5252" ph="..." />
               </folding>
             </state>
           </provider>
@@ -97,7 +95,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SC.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1337">
+            <state relative-caret-position="912">
               <caret line="197" column="41" lean-forward="true" selection-start-line="197" selection-start-column="41" selection-end-line="197" selection-end-column="41" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -212,9 +210,9 @@
         <option value="$PROJECT_DIR$/SC.py" />
         <option value="$PROJECT_DIR$/Kmeans.py" />
         <option value="$PROJECT_DIR$/SSVD.py" />
-        <option value="$PROJECT_DIR$/MyGui.py" />
         <option value="$PROJECT_DIR$/SeqSC.py" />
         <option value="$PROJECT_DIR$/SeqKM.py" />
+        <option value="$PROJECT_DIR$/MyGui.py" />
       </list>
     </option>
   </component>
@@ -223,6 +221,44 @@
     <option name="y" value="102" />
     <option name="width" value="1872" />
     <option name="height" value="930" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+          <State>
+            <id>General</id>
+          </State>
+          <State>
+            <id>Properties Files</id>
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+          <State>
+            <id>RELAX NG</id>
+          </State>
+          <State>
+            <id>ReST</id>
+          </State>
+          <State>
+            <id>RegExp</id>
+          </State>
+          <State>
+            <id>XML</id>
+          </State>
+          <State>
+            <id>YAML</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyDeprecationInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -250,7 +286,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -425,8 +461,8 @@
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.13354531" side_tool="true" weight="0.30195382" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.3285968" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.5293073" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.5293073" />
+      <window_info anchor="bottom" id="Python Console" order="11" weight="0.3285968" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -542,17 +578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/MyGui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-635">
-          <caret line="67" column="29" selection-start-line="67" selection-start-column="29" selection-end-line="67" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <marker date="1567929146334" expanded="true" signature="3447:5251" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Kmeans.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="137">
@@ -584,9 +609,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/MyGui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1940">
+          <caret line="187" column="8" lean-forward="true" selection-start-line="187" selection-start-column="8" selection-end-line="187" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1567933813943" expanded="true" signature="3448:5252" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/SC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1337">
+        <state relative-caret-position="912">
           <caret line="197" column="41" lean-forward="true" selection-start-line="197" selection-start-column="41" selection-end-line="197" selection-end-column="41" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
