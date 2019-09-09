@@ -120,14 +120,11 @@ def guiseqsc(k, n, m, f):
     (X_train, y_train), (X_test, y_test) = mnist.load_data()
     X_train = X_train[0:n]
     y_train = y_train[0:n]
-    # k = 10
-    # m =int( len(X_train)/5)
     z = []
     for i in range(10):
         z.append(0)
     for y in y_train:
         z[y] = z[y] + 1
-    # print(z)
     if (f > 0):
         print("apply filter")
         X_train = make_0_255(X_train)

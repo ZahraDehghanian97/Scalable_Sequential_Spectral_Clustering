@@ -179,7 +179,7 @@ def distribution():
 def chart():
     global x, y, labels
     fig, ax = plt.subplots(figsize=(8, 5))
-    ax.scatter(y, build_distances_black(x), c=labels, s=20)
+    ax.scatter(y, build_distances_black(x), c=labels,cmap='rainbow',edgecolors='b', s=20)
     plt.show()
 
     return
@@ -284,7 +284,7 @@ def setting():
     type = v.get()
     if type == 1:
         root2 = Toplevel(asli)
-        root2.title('ُSpectral Clustering')
+        root2.title('Spectral Clustering')
         Label(root2, text="""please check desired value :""").grid(row=0, column=0, columnspan=3)
         Label(root2, text=""" """).grid(row=1, column=0)
         k_entry = Entry(root2, width=7, textvariable=k)
@@ -379,9 +379,9 @@ n.set(100)
 m = IntVar()
 m.set(20)
 v = IntVar()
-v.set(2)
+v.set(1)
 f = IntVar()
-f.set(1)
+f.set(0)
 (x, y), (xt, labels) = mnist.load_data()
 Radiobutton(root, text="Spectral Clustering", variable=v, value=1).grid(row=2, column=0)
 Radiobutton(root, text="SeqSC", variable=v, value=2).grid(row=2, column=1)
