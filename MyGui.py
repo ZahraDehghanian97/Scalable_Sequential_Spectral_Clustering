@@ -33,7 +33,7 @@ def PlogP(p):
 def nmi():
     printable = build_printable()
     result = ""
-    result = result + "compute NMI ------------" + "\n"
+    result = result + "compute NMI ----------------" + "\n\n"
     end_row = len(printable) - 1
     end_col = len(printable[0]) - 1
     H_Y = 0
@@ -46,8 +46,8 @@ def nmi():
     for i in range(0, end_col):
         p = printable[end_row][i] / printable[end_row][end_col]
         H_C = H_C + PlogP(p)
-    result = result + ("H(Y) = " + str(H_Y)) + "\n"
-    result = result + ("H(C) = " + str(H_C)) + "\n"
+    result = result + ("H(Y) = " + str(H_Y)) + "\n\n"
+    result = result + ("H(C) = " + str(H_C)) + "\n\n"
     for j in range(0, end_col):
         temp = 0
         # print("H (Y | C = "+str(j)+" ) = ", end = '')
@@ -62,9 +62,9 @@ def nmi():
     I_Y_C = H_Y - H_Y_C
     ans = (2 * I_Y_C) / (H_Y + H_C)
     ans = round(ans, 3)
-    result = result + ("H(Y|C) = " + str(H_Y_C)) + "\n"
-    result = result + ("I(Y;C) = " + str(I_Y_C)) + "\n"
-    result = result + ("-----------------------") + "\n"
+    # result = result + ("H(Y|C) = " + str(H_Y_C)) + "\n"
+    result = result + ("I(Y;C) = " + str(I_Y_C)) + "\n\n"
+    result = result + ("-----------------------") + "\n\n"
     result = result + ("NMI = " + str(ans))
     print("NMI = " + str(ans))
     global asli
@@ -179,7 +179,7 @@ def distribution():
 def chart():
     global x, y, labels
     fig, ax = plt.subplots(figsize=(8, 5))
-    ax.scatter(y, build_distances_black(x), c=labels,cmap='rainbow',edgecolors='b', s=20)
+    ax.scatter(y, build_distances_black(x), c=labels, s=20)
     plt.show()
 
     return
