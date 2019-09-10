@@ -104,6 +104,11 @@ ssc = np.array(ssc)
 print(nmissc)
 print(sssc)
 
+#
+# km = [0.15,0.18,0.3,0.35,0.38,0.6,0.5,0.65,0.7,0.8,0.86,0.81,0.93,1.05,1.11]
+# kmpp = [0.3,0.45,0.74,0.83,0.4,0.9,1.2,1.3,1.55,1.43,1.67,2,2.1,2.3,2.7]
+# ssc = [2,3,5.5,7.6,10.5,10,12.5,14,17,18,18.5,20.5,20,22,22.5]
+# sssc = [0.7,1,1.2,1.3,1.6,2.5,2.3,4,4.4,6,7,8.5,11.2,12.5,13]
 fig, xy_time = plt.subplots()
 fig, xy_nmi = plt.subplots(tight_layout=True)
 xy_time.plot(x_plot, km, '-d',c= "blue", label = 'KMeans')
@@ -127,7 +132,6 @@ xy_nmi.set_title("NMI")
 
 
 print("NMI computation : ")
-print(x)
 print("SeqSC : "+str(nmissc))
 print("SC : "+str(nmisc))
 print("KMeans : "+str(nmikmeans))
