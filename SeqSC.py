@@ -3,7 +3,7 @@ import SSVD
 import numpy as np
 import scipy
 import SeqKM
-from keras.datasets import mnist
+from keras.datasets import fashion_mnist
 
 
 # gussian kernel : should add some number to cordinate
@@ -105,7 +105,8 @@ def seqsc(x, k, m):
     return label_all, centers, anchors
 
 
-def make_0_255(X_train):
+def make_0_255(z):
+    X_train = z.copy()
     for k in range(len(X_train)):
         for i in range(len(X_train[0])):
             for j in range(len(X_train[0][0])):
@@ -117,7 +118,7 @@ def make_0_255(X_train):
 
 
 def guiseqsc(k, n, m, f):
-    (X_train, y_train), (X_test, y_test) = mnist.load_data()
+    (X_train, y_train), (X_test, y_test) = fashion_mnist.load_data()
     X_train = X_train[0:n]
     y_train = y_train[0:n]
     z = []

@@ -99,7 +99,8 @@ def centroid():
     for s in range(0, k.get() - 1):
         for i in range(0, len(centroid[0]) - 1):
             for j in range(0, len(centroid[0][0]) - 1):
-                centroid[s][i][j] = centroid[s][i][j] / counter[s]
+                if counter[s]>0 :
+                    centroid[s][i][j] = centroid[s][i][j] / counter[s]
     # c0 = []
     # cc0 = 0
     # for i in range(0,len(label_all)):

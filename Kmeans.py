@@ -1,6 +1,6 @@
 import random as rd
 import math
-from keras.datasets import mnist
+from keras.datasets import fashion_mnist
 from sklearn.cluster import KMeans
 
 
@@ -71,7 +71,7 @@ def transform(X_train):
 
 
 def guikmeansplusplus(k, n, f):
-    (X_train, y_train), (X_test, y_test) = mnist.load_data()
+    (X_train, y_train), (X_test, y_test) = fashion_mnist.load_data()
     X_train = X_train[:n]
     y_train = y_train[:n]
     if (f > 0):
@@ -94,7 +94,7 @@ def make_0_255(X_train):
 
 
 def guikmeans(k, n, f):
-    (X_train, y_train), (X_test, y_test) = mnist.load_data()
+    (X_train, y_train), (X_test, y_test) = fashion_mnist.load_data()
     X_train = X_train[:n]
     y_train = y_train[:n]
     if (f > 0):
