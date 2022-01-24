@@ -3,7 +3,7 @@ import SSVD
 import numpy as np
 import scipy
 import SeqKM
-from keras.datasets import fashion_mnist
+from tensorflow.keras.datasets import fashion_mnist
 
 
 # gussian kernel : should add some number to cordinate

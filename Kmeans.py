@@ -1,6 +1,6 @@
 import random as rd
 import math
-from keras.datasets import fashion_mnist
+from tensorflow.keras.datasets import fashion_mnist
 from sklearn.cluster import KMeans
 
 

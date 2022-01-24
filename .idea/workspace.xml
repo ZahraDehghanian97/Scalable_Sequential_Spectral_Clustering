@@ -6,8 +6,9 @@
       <change beforePath="$PROJECT_DIR$/Kmeans.py" beforeDir="false" afterPath="$PROJECT_DIR$/Kmeans.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyGui.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyGui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SC.py" beforeDir="false" afterPath="$PROJECT_DIR$/SC.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SSVD.py" beforeDir="false" afterPath="$PROJECT_DIR$/SSVD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SeqKM.py" beforeDir="false" afterPath="$PROJECT_DIR$/SeqKM.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SeqSC.py" beforeDir="false" afterPath="$PROJECT_DIR$/SeqSC.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/evaluation.py" beforeDir="false" afterPath="$PROJECT_DIR$/evaluation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,12 +56,23 @@
     <session id="-1800726246">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="1" />
+          <entry key="project.closed" value="10" />
+          <entry key="project.open.time.0" value="4" />
+          <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="55" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="55" />
         </counts>
       </usages-collector>
     </session>
@@ -82,14 +94,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/MyGui.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="151" column="32" selection-start-line="151" selection-start-column="27" selection-end-line="151" selection-end-column="32" />
+            <state relative-caret-position="175">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
-                <marker date="1568465243722" expanded="true" signature="3502:5306" ph="..." />
+                <marker date="1643013149753" expanded="true" signature="3513:5317" ph="..." />
               </folding>
             </state>
           </provider>
@@ -119,11 +131,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SeqKM.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
+            <state relative-caret-position="297">
+              <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -134,11 +146,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SeqSC.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1980">
-              <caret line="95" column="26" selection-start-line="94" selection-start-column="8" selection-end-line="95" selection-end-column="26" />
+            <state relative-caret-position="109">
+              <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
-                <marker date="1568469730400" expanded="true" signature="477:767" ph="..." />
+                <marker date="1643013132045" expanded="true" signature="488:778" ph="..." />
               </folding>
             </state>
           </provider>
@@ -147,11 +159,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Kmeans.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2046">
-              <caret line="96" column="51" selection-start-line="96" selection-start-column="51" selection-end-line="96" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-857">
+              <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
             </state>
           </provider>
         </entry>
@@ -159,8 +168,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SSVD.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="21" column="18" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="18" />
+            <state relative-caret-position="79">
+              <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -171,11 +180,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SC.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="814">
-              <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+            <state relative-caret-position="22">
+              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
-                <marker date="1568470081547" expanded="true" signature="2575:2576" ph="..." />
+                <marker date="1643013108819" expanded="true" signature="2586:2587" ph="..." />
               </folding>
             </state>
           </provider>
@@ -192,8 +200,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sh</find>
-      <find>dis</find>
       <find>eucl</find>
       <find>inde</find>
       <find>tran</find>
@@ -222,6 +228,8 @@
       <find>50</find>
       <find>sum</find>
       <find>mni</find>
+      <find>iris</find>
+      <find>sho</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -241,13 +249,13 @@
         <option value="$PROJECT_DIR$/dady.py" />
         <option value="$PROJECT_DIR$/SC-multiC.py" />
         <option value="$PROJECT_DIR$/Simple-SC.py" />
+        <option value="$PROJECT_DIR$/evaluation.py" />
+        <option value="$PROJECT_DIR$/Kmeans.py" />
+        <option value="$PROJECT_DIR$/SC.py" />
+        <option value="$PROJECT_DIR$/SeqSC.py" />
+        <option value="$PROJECT_DIR$/MyGui.py" />
         <option value="$PROJECT_DIR$/SSVD.py" />
         <option value="$PROJECT_DIR$/SeqKM.py" />
-        <option value="$PROJECT_DIR$/MyGui.py" />
-        <option value="$PROJECT_DIR$/SC.py" />
-        <option value="$PROJECT_DIR$/Kmeans.py" />
-        <option value="$PROJECT_DIR$/SeqSC.py" />
-        <option value="$PROJECT_DIR$/evaluation.py" />
       </list>
     </option>
   </component>
@@ -320,7 +328,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../foqelisans/pattern_recognition/SPR_HW1/code" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RunDashboard">
@@ -471,7 +479,7 @@
     </task>
     <servers />
   </component>
-  <component name="TodoView">
+  <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -490,7 +498,7 @@
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.3285968" />
       <window_info anchor="bottom" id="Favorites" order="3" weight="0.3285968" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.86645466" weight="0.3285968" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.86645466" visible="true" weight="0.3285968" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.39964476" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
@@ -613,65 +621,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SeqKM.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SeqSC.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1980">
-          <caret line="95" column="26" selection-start-line="94" selection-start-column="8" selection-end-line="95" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1568469730400" expanded="true" signature="477:767" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Kmeans.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2046">
-          <caret line="96" column="51" selection-start-line="96" selection-start-column="51" selection-end-line="96" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#19#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SSVD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="21" column="18" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="814">
-          <caret line="43" column="40" selection-start-line="43" selection-start-column="40" selection-end-line="43" selection-end-column="40" />
+        <state relative-caret-position="22">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <marker date="1568470081547" expanded="true" signature="2575:2576" ph="..." />
+            <marker date="1643013108819" expanded="true" signature="2586:2587" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MyGui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="151" column="32" selection-start-line="151" selection-start-column="27" selection-end-line="151" selection-end-column="32" />
+        <state relative-caret-position="175">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
-            <marker date="1568465243722" expanded="true" signature="3502:5306" ph="..." />
+            <marker date="1643013149753" expanded="true" signature="3513:5317" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Kmeans.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-857">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SeqSC.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="37" column="4" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <marker date="1643013132045" expanded="true" signature="488:778" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SSVD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SeqKM.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="28" column="1" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>

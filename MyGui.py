@@ -5,7 +5,7 @@ import Kmeans
 import SC
 import matplotlib.pyplot as plt
 import SeqSC
-from keras.datasets import mnist
+from tensorflow.keras.datasets import mnist
 from tkinter.filedialog import askopenfilename
 import time
 

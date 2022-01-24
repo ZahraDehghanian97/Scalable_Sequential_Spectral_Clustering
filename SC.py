@@ -1,5 +1,5 @@
 import math
-from keras.datasets import (fashion_mnist,mnist)
+from tensorflow.keras.datasets import (fashion_mnist,mnist)
 import matplotlib.pyplot as plt
 from sklearn import (manifold, datasets, decomposition)
 import numpy as np
